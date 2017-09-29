@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ViewCell >
+	<StackLayout BackgroundColor="#eee" Orientation="Vertical">
+       <StackLayout Orientation="Horizontal" HeightRequest="80">
+           <Image Source="{Binding ImageFilename}" WidthRequest="80" HeightRequest="80"/>
+           <Label Text="{Binding Name}" TextColor="#f35e20" />
+           <Label Text="{Binding EventFriends}" TextColor="#503026" />
+           <Label Text="{Binding Time}"/>
+        </StackLayout>
+    </StackLayout>
+</ViewCell>
