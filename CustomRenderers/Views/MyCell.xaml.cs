@@ -46,18 +46,7 @@ namespace CustomRenderers.Views
             get { return (string)GetValue(EventFriendsProperty); }
             set { SetValue(EventFriendsProperty, value); }
 		}
-		protected override void OnBindingContextChanged()
-		{
-			base.OnBindingContextChanged();
-
-			if (BindingContext != null)
-			{
-                //nameLabel.Text = Name;
-                //timeLabel.Text = Time;
-                //eventFriendsLabel.Text = EventFriends;
-
-			}
-		}
+		
 
     }
 }

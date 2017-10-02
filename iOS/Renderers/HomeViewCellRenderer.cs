@@ -4,10 +4,10 @@ using CustomRenderers.iOS.Renderers;
 using UIKit;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.iOS;
-[assembly: ExportRenderer(typeof(MyEntry), typeof(MyEntryRenderer))]
+[assembly: ExportRenderer(typeof(HomeViewCell), typeof(HomeViewCellRenderer))]
 namespace CustomRenderers.iOS.Renderers
 {
-	public class MyEntryRenderer : EntryRenderer
+	public class HomeViewCellRenderer : ViewCellRenderer
 	{
 		protected override void OnElementChanged(ElementChangedEventArgs<Entry> e)
 		{

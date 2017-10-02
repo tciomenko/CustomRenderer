@@ -11,8 +11,11 @@ namespace CustomRenderers.Views
         public ListView SettingList { get { return settingList; } }
         public SettingsView()
         {
-            var settingItems=new List<SettingsModel> ();
+            
             InitializeComponent();
+            NavigationPage.SetTitleIcon(this, "images1.jpg");
+            var settingItems=new List<SettingsModel> ();
+
             settingItems.Add(new SettingsModel(){
                 On=true,
                 Text="Sound"

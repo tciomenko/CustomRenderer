@@ -17,7 +17,7 @@ namespace CustomRenderers.Views
         protected override void OnAppearing()
         {
             base.OnAppearing();
-            Task.Delay(3000).Wait();
+            //Task.Delay(3000).Wait();
             Navigation.PushModalAsync(new LoginView());
 
         }
