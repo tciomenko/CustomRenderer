@@ -8,32 +8,17 @@
 <!--        <ScrollView>-->
         <StackLayout HorizontalOptions="FillAndExpand">
         <Label Text="Good Morning!" FontSize="35" TextColor="White" HorizontalOptions="Center"/>
-        <Button Image="circle.png" Opacity="1" Margin="20" />
-            
-                <StackLayout HorizontalOptions="CenterAndExpand" Orientation="Horizontal" Margin="10">
-                <Button Text="asd" HorizontalOptions="Start" />
-                <Button Text="Февраль"  HorizontalOptions="Center"/>
-                <Button Text="asd"  HorizontalOptions="End"/>
-                </StackLayout>
-            <StackLayout HorizontalOptions="Center" Orientation="Horizontal" Margin="10" HeightRequest="20">
-                <Button Text="1" HorizontalOptions="Fill"/>
-                <Button Text="2" HorizontalOptions="Fill"/>
-                <Button Text="3" HorizontalOptions="Fill"/>
-                <Button Text="4" HorizontalOptions="Fill" BorderRadius="10"   WidthRequest="20" FontSize="10" BackgroundColor="Green"/>
-                <Button Text="5" HorizontalOptions="Fill"/>
-                <Button Text="6" HorizontalOptions="Fill"/>
-                <Button Text="7" HorizontalOptions="Fill"/>
-            </StackLayout>
-
-            <ListView x:Name="listView" RowHeight="80" BackgroundColor="White" HasUnevenRows="true"
-                IsRefreshing="{Binding isBusy}"  Refreshing="Handle_Refreshing" IsPullToRefreshEnabled="true" ItemTapped="Handle_ItemTapped">
+        <Button Image="circle.png" Opacity="1" Margin="20"/>
+            <ListView x:Name="listView" ItemsSource="{Binding}" RowHeight="80" BackgroundColor="White" HasUnevenRows="true"
+                IsRefreshing="{Binding IsBusy,Mode=OneWay}"  Refreshing="Handle_Refreshing"
+                IsPullToRefreshEnabled="true" ItemTapped="Handle_ItemTapped" >
             <ListView.ItemTemplate>
                 <DataTemplate>
 <!--   <local:Views.HomeViewCell Name="{Binding Name}" EventFriends="{Binding EventFriends}" Time="{Binding Time}"
                         ImageFilename="{Binding ImageFilename}"/>-->
 <!--                        <ImageCell Detail="{Binding Time}" ImageSource="{Binding ImageFilename}" Text="{Binding Name}" />-->
                       <ViewCell >
-                            <StackLayout BackgroundColor="White" Orientation="Horizontal" Margin="5,5,0,0">
+                            <StackLayout BackgroundColor="White" Orientation="Horizontal" Margin="0,5,0,5">
                                <Image Source="{Binding ImageFilename}"  WidthRequest="80" HeightRequest="80"/>
                                 <StackLayout Orientation="Vertical">
                                     <StackLayout Orientation="Horizontal" BackgroundColor="White">
@@ -46,7 +31,6 @@
                                     </StackLayout>
                                     </StackLayout>
                                 </StackLayout> 
-
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>

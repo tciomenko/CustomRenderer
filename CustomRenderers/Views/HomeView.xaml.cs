@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using XamForms.Controls;
 using CustomRenderers.Models;
+using CustomRenderers.ViewModels;
 using Xamarin.Forms;
 using System.Threading.Tasks;
 
@@ -11,34 +12,28 @@ namespace CustomRenderers.Views
     {
         
         public bool isPull = true;
-        public ListView ListView { get { return listView; } }
-               public HomeView()
+        private FriendListViewModel friendList;
+
+
+        public HomeView()
 		{
-            var masterPageItems = new List<MyCellModel>();
 			InitializeComponent();
+            friendList = new FriendListViewModel();
+            friendList.SetMasterPageItem();
+            this.BindingContext = this.friendList.masterPageItems;
 
-            for (var i = 0; i < 5;i++){
-			masterPageItems.Add(new MyCellModel
-			{
-                
-				Name = "Home",
-				ImageFilename = "circle.png",
-                EventFriends="Event",
-                Time="8-10pm",
-				TargetType = typeof(HomeView)
-			});
-			}
-
-			listView.ItemsSource = masterPageItems;
 		}
         void Handle_Refreshing(object sender, System.EventArgs e)
         {
+            this.friendList.IsBusy = true;
 
+            
+            this.friendList.IsBusy = false;
         }
 
         void Handle_ItemTapped(object sender, Xamarin.Forms.ItemTappedEventArgs e)
         {
-            throw new NotImplementedException();
+
         }
     }
 }

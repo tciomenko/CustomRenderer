@@ -82,7 +82,7 @@
     <Compile Include="Models\MyCellModel.cs" />
     <Compile Include="Models\SettingsModel.cs" />
     <Compile Include="Views\HomeViewCell.cs" />
-    <Compile Include="ViewModels\FriandListViewModel.cs" />
+    <Compile Include="ViewModels\FriendListViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="XamForms.Controls.Calendar">
