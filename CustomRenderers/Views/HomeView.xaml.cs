@@ -11,7 +11,6 @@ namespace CustomRenderers.Views
     public partial class HomeView : ContentPage
     {
         
-        public bool isPull = true;
         private FriendListViewModel friendList;
 
 
@@ -20,20 +19,17 @@ namespace CustomRenderers.Views
 			InitializeComponent();
             friendList = new FriendListViewModel();
             friendList.SetMasterPageItem();
-            this.BindingContext = this.friendList.masterPageItems;
+            BindingContext = friendList.masterPageItems;
+
 
 		}
         void Handle_Refreshing(object sender, System.EventArgs e)
         {
-            this.friendList.IsBusy = true;
 
-            
-            this.friendList.IsBusy = false;
+                //listView.IsRefreshing = true;
+                //listView.IsRefreshing = false;
         }
 
-        void Handle_ItemTapped(object sender, Xamarin.Forms.ItemTappedEventArgs e)
-        {
 
-        }
     }
 }

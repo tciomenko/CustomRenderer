@@ -26,19 +26,19 @@ namespace CustomRenderers.Views
 			masterPageItems.Add(new NavigationPageItem
 			{
 				Title = "Home",
-				IconSource = "checkmark.png",
+				IconSource = "Home.png",
                 TargetType = typeof(HomeView)
 			});
 			masterPageItems.Add(new NavigationPageItem
 			{
 				Title = "Settings",
-				IconSource = "checkmark.png",
+                IconSource = "Settings.png",
 				TargetType = typeof(SettingsView)
 			});
 			masterPageItems.Add(new NavigationPageItem
 			{
 				Title = "Log Out",
-				IconSource = "checkmark.png",
+				IconSource = "Logout.png",
                 TargetType = typeof(LoginView)
 			});
 

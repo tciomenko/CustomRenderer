@@ -138,6 +138,9 @@
     <BundleResource Include="Resources\images1.jpg" />
     <BundleResource Include="Resources\login.png" />
     <BundleResource Include="Resources\pass.png" />
+    <BundleResource Include="Resources\Home.png" />
+    <BundleResource Include="Resources\Settings.png" />
+    <BundleResource Include="Resources\Logout.png" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="LaunchScreen.storyboard" />

@@ -4,9 +4,8 @@
     x:Class="CustomRenderers.Views.NavigationView"
     Icon="hamburger.png"  Title="Personal Organiser">
     <ContentPage.Content>
-	<StackLayout  Padding="0,20,0,-10">
-            
-            <Button Text="X" x:Name="ExitButton" HorizontalOptions="Start"  Clicked="FireClick"/>
+	<StackLayout  Padding="0,45,0,-10">
+       <Button Text="X" x:Name="ExitButton" HorizontalOptions="Start" Margin="8,0,0,0"  Clicked="FireClick"/>
         <ListView x:Name="listView" SeparatorVisibility="None" >
             <ListView.ItemTemplate>
                 <DataTemplate>
@@ -14,11 +13,11 @@
                         <Grid Padding="10,0,10,0">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="*"/>
-                                <ColumnDefinition Width="60" />
+                                <ColumnDefinition Width="30" />
                             </Grid.ColumnDefinitions>
 
                             <Label  Text="{Binding Title}" VerticalOptions="FillAndExpand" HorizontalOptions="Start" />
-                            <Image Grid.Column="1" Source="{Binding IconSource}" HorizontalOptions="End" />
+                            <Image Grid.Column="1" Source="{Binding IconSource}" HorizontalOptions="End"/>
                         </Grid>
                     </ViewCell>
                 </DataTemplate>
