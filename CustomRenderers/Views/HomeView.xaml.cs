@@ -19,7 +19,7 @@ namespace CustomRenderers.Views
 			InitializeComponent();
             friendList = new FriendListViewModel();
             friendList.SetMasterPageItem();
-            BindingContext = friendList.masterPageItems;
+
 
 
 		}

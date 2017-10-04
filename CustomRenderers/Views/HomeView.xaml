@@ -9,9 +9,9 @@
         <StackLayout HorizontalOptions="FillAndExpand">
         <Label Text="Good Morning!" FontSize="35" TextColor="White" HorizontalOptions="Center"/>
         <Button Image="circle.png" Opacity="1" Margin="20" BackgroundColor="Transparent"/>
-            <ActivityIndicator x:Name="BusyIndicator" IsRunning="{Binding IsBusy}" IsVisible="{Binding IsBusy}"/>
-            <ListView x:Name="listView" ItemsSource="{Binding}" RowHeight="80" BackgroundColor="White" HasUnevenRows="true"
-                IsRefreshing="{Binding IsBusy,Mode=OneWay}"  RefreshCommand="{Binding RefreshCommand}"
+<!--            <ActivityIndicator x:Name="BusyIndicator" IsRunning="{Binding IsBusy}" IsVisible="{Binding IsBusy}"/>-->
+            <ListView x:Name="listView" ItemsSource="{Binding MasterPageItems}" RowHeight="80" BackgroundColor="White" HasUnevenRows="true"
+                IsRefreshing="{Binding IsBusy}"  RefreshCommand="{Binding RefreshCommand}"
                 IsPullToRefreshEnabled="true">
             <ListView.ItemTemplate>
                 <DataTemplate>

@@ -44,7 +44,19 @@ namespace CustomRenderers.ViewModels
 
 
         }
+        public List<MyCellModel> MasterPageItems
+        {
+            get
+            {
+                return masterPageItems;
+            }
+            set
+            {
+                masterPageItems = value;
+                OnPropertyChanged("MasterPageItems");
 
+            }
+        }
 
         public bool IsBusy
         {
