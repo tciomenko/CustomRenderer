@@ -16,6 +16,8 @@ namespace CustomRenderers.ViewModels
 
         public List<MyCellModel> masterPageItems = new List<MyCellModel>();
 
+        public FriendListViewModel(){
+        }
         public ICommand RefreshCommand
         {
             get
@@ -23,7 +25,7 @@ namespace CustomRenderers.ViewModels
                 return new Command(async () =>
                 {
                     IsBusy = true;
-                    
+                    MasterPageItems.Clear();
                     await SetMasterPageItem();
                     IsBusy = false;
                 });

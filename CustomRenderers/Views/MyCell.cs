@@ -46,7 +46,5 @@ namespace CustomRenderers.Views
             get { return (string)GetValue(EventFriendsProperty); }
             set { SetValue(EventFriendsProperty, value); }
 		}
-		
-
     }
 }

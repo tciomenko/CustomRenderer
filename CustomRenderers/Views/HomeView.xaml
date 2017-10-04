@@ -1,24 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-    xmlns:local="clr-namespace:CustomRenderers;assembly=CustomRenderers"
+    xmlns:local="clr-namespace:CustomRenderers.Views;assembly=CustomRenderers"
     x:Class="CustomRenderers.Views.HomeView"
-    BackgroundImage="kITvxi0Tf34.jpg" Padding="0" IsBusy="true">
+    BackgroundImage="kITvxi0Tf34.jpg" Padding="0">
   <ContentPage.Content>
 <!--        <ScrollView>-->
         <StackLayout HorizontalOptions="FillAndExpand">
         <Label Text="Good Morning!" FontSize="35" TextColor="White" HorizontalOptions="Center"/>
         <Button Image="circle.png" Opacity="1" Margin="20" BackgroundColor="Transparent"/>
 <!--            <ActivityIndicator x:Name="BusyIndicator" IsRunning="{Binding IsBusy}" IsVisible="{Binding IsBusy}"/>-->
-            <ListView x:Name="listView" ItemsSource="{Binding MasterPageItems}" RowHeight="80" BackgroundColor="White" HasUnevenRows="true"
+            <ListView ItemsSource="{Binding MasterPageItems}" RowHeight="80" BackgroundColor="White" HasUnevenRows="true"
                 IsRefreshing="{Binding IsBusy}"  RefreshCommand="{Binding RefreshCommand}"
                 IsPullToRefreshEnabled="true">
             <ListView.ItemTemplate>
                 <DataTemplate>
-<!--   <local:Views.HomeViewCell Name="{Binding Name}" EventFriends="{Binding EventFriends}" Time="{Binding Time}"
-                        ImageFilename="{Binding ImageFilename}"/>-->
-<!--                        <ImageCell Detail="{Binding Time}" ImageSource="{Binding ImageFilename}" Text="{Binding Name}" />-->
-                      <ViewCell >
+<local:MyCell Name="{Binding Name}" EventFriends="{Binding EventFriends}" Time="{Binding Time}"
+                        ImageFilename="{Binding ImageFilename}"/>
+                      <!--<ViewCell >
                             <StackLayout BackgroundColor="White" Orientation="Horizontal" Margin="0,5,0,5">
                                <Image Source="{Binding ImageFilename}"  WidthRequest="80" HeightRequest="80"/>
                                 <StackLayout Orientation="Vertical">
@@ -32,7 +31,7 @@
                                     </StackLayout>
                                     </StackLayout>
                                 </StackLayout> 
-                        </ViewCell>
+                        </ViewCell>-->
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
