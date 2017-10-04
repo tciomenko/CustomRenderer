@@ -48,6 +48,9 @@
     <EmbeddedResource Include="Views\MyCell.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\FriendDetailView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.xaml.cs">
@@ -83,6 +86,9 @@
     <Compile Include="Models\SettingsModel.cs" />
     <Compile Include="Views\HomeViewCell.cs" />
     <Compile Include="ViewModels\FriendListViewModel.cs" />
+    <Compile Include="Views\FriendDetailView.xaml.cs">
+      <DependentUpon>FriendDetailView.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="XamForms.Controls.Calendar">

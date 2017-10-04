@@ -8,7 +8,6 @@
        <local:Views.NavigationView x:Name="NavigationView" />
     </MasterDetailPage.Master>
     <MasterDetailPage.Detail>
-        
         <NavigationPage>
             <x:Arguments>
                 <local:Views.HomeView />

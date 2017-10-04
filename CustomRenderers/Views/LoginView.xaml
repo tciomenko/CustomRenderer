@@ -7,27 +7,30 @@
 
     <StackLayout>
         <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="Center">
-    <Image Source="reminder.png"  HeightRequest="200" VerticalOptions="Fill"/>
+        <Image Source="reminder.png"  HeightRequest="200" VerticalOptions="Fill"/>
         </StackLayout> 
         <StackLayout VerticalOptions="EndAndExpand">
         <StackLayout Orientation="Horizontal" Padding="15,0,0,0">
             <Image Source="login.png" WidthRequest="20" HeightRequest="10"  />
-            <Entry x:Name="login" Text="" TextColor="White" PropertyChanged="SignUpPropertyChanged" BackgroundColor="Transparent" Placeholder="Login" HorizontalOptions="FillAndExpand"/>
+            <Entry x:Name="login" Text="" TextColor="White" PropertyChanged="SignUpPropertyChanged" BackgroundColor="Transparent"
+                Placeholder="Login" HorizontalOptions="FillAndExpand"/>
         </StackLayout>
         
         <StackLayout Orientation="Horizontal"  Padding="15,0,0,0">
             <Image Source="pass.png" WidthRequest="20" HeightRequest="20" />
-            <Entry Text=""  TextColor="White" BackgroundColor="Transparent" PropertyChanged="SignUpPropertyChanged"  x:Name="pass" Placeholder="Password" HorizontalOptions="FillAndExpand" 
+            <Entry Text=""  TextColor="White" BackgroundColor="Transparent" PropertyChanged="SignUpPropertyChanged"  x:Name="pass" Placeholder="Password"
+                    HorizontalOptions="FillAndExpand" 
             IsPassword="true"/>
         </StackLayout>
         
-        <Button HorizontalOptions="End" Text="Forgot Password" TextColor="White" Margin="0,0,0,20"/>
-        <Button HorizontalOptions="Fill"  BackgroundColor="Red" TextColor="White" Text="Sign In" x:Name="signIn" IsEnabled="false" Clicked="SingInClicked" BorderRadius="0"
+        <Button HorizontalOptions="End" Text="Forgot Password" BackgroundColor="Transparent" TextColor="White" Margin="0,0,0,20"/>
+        <Button HorizontalOptions="Fill"  BackgroundColor="Red"  TextColor="White" Text="Sign In" x:Name="signIn" IsEnabled="false"
+                Clicked="SingInClicked" BorderRadius="0"
         FontSize="20"/>
         
         <StackLayout  Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
             <Label TextColor="Silver" Text="Don't have account?" FontSize="13" Margin="0,15,0,0"/>
-            <Button BackgroundColor="Transparent" Text="Sign Up" TextColor="White" />
+            <Button BackgroundColor="Transparent" Text="Sign Up" TextColor="White" BorderColor="Transparent" />
         </StackLayout>
         </StackLayout>
     </StackLayout>

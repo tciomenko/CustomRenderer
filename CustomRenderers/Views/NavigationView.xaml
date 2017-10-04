@@ -5,7 +5,8 @@
     Icon="hamburger.png"  Title="Personal Organiser">
     <ContentPage.Content>
 	<StackLayout  Padding="0,45,0,-10">
-       <Button Text="X" x:Name="ExitButton" HorizontalOptions="Start" Margin="8,0,0,0"  Clicked="FireClick"/>
+       <Button Text="X" x:Name="ExitButton" BackgroundColor="Transparent"  HorizontalOptions="Start"  Clicked="FireClick"/>
+
         <ListView x:Name="listView" SeparatorVisibility="None" >
             <ListView.ItemTemplate>
                 <DataTemplate>
