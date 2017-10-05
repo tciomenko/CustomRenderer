@@ -4,15 +4,16 @@ using CustomRenderers.Views;
 using CustomRenderers;
 using UIKit;
 using Xamarin.Forms;
+using Foundation;
 
 namespace CustomRenderers.iOS.Renderers
 {
-    public class MyiOSCell:UITableViewCell,INativeElementView
+    public partial class MyiOSCell:UITableViewCell,INativeElementView
     {
         public UILabel NameLabel { get; set; }
         public UILabel TimeLabel { get; set; }
         public UILabel EventLabel { get; set; }
-        public UIImageView CellImageView { get; set;}
+        public UIImageView CellImageView { get; set; }
         public MyCell MyCell;
         public Element Element => MyCell;
 
@@ -22,6 +23,7 @@ namespace CustomRenderers.iOS.Renderers
             SelectionStyle = UITableViewCellSelectionStyle.Gray;
             ContentView.BackgroundColor = UIColor.FromRGB(255, 255, 255);
             CellImageView = new UIImageView();
+
             NameLabel = new UILabel()
             {
                 Font = UIFont.FromName("Cochin-BoldItalic", 22f),
