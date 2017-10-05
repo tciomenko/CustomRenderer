@@ -128,8 +128,8 @@
   <ItemGroup>
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
-    <Compile Include="Renderers\MyiOSCell.cs" />
     <Compile Include="Renderers\MyiOSCellRenderer.cs" />
+    <Compile Include="Renderers\MyiOSCell.cs" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\image.jpg" />
