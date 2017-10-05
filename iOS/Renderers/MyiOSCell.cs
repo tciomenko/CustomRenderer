@@ -11,7 +11,7 @@ namespace CustomRenderers.iOS.Renderers
     {
         public UILabel NameLabel { get; set; }
         public UILabel TimeLabel { get; set; }
-        public UILabel EventLable { get; set; }
+        public UILabel EventLabel { get; set; }
         public UIImageView CellImageView { get; set;}
         public MyCell MyCell;
         public Element Element => MyCell;
@@ -25,41 +25,52 @@ namespace CustomRenderers.iOS.Renderers
             NameLabel = new UILabel()
             {
                 Font = UIFont.FromName("Cochin-BoldItalic", 22f),
-                TextColor = UIColor.FromRGB(127, 51, 0),
+                TextColor = UIColor.Black,
                 BackgroundColor = UIColor.Clear
             };
 
             TimeLabel = new UILabel()
             {
                 Font = UIFont.FromName("AmericanTypewriter", 12f),
-                TextColor = UIColor.FromRGB(38, 127, 0),
-                TextAlignment = UITextAlignment.Center,
+                TextColor = UIColor.DarkGray,
                 BackgroundColor = UIColor.Clear
             };
+            EventLabel = new UILabel()
+            {
+                Font = UIFont.FromName("AmericanTypewriter", 12f),
+                TextColor = UIColor.Black,
+                BackgroundColor = UIColor.Clear
+            };
+
+            ContentView.Add(CellImageView);
             ContentView.Add(NameLabel);
             ContentView.Add(TimeLabel);
-            ContentView.Add(CellImageView);
+            ContentView.Add(EventLabel);
+
         }
 
         public void UpdateCell(MyCell cell)
         {
             NameLabel.Text = cell.Name;
             TimeLabel.Text = cell.Time;
+            EventLabel.Text = cell.EventFriends;
             CellImageView.Image = GetImage(cell.ImageFilename);
         }
 
         public UIImage GetImage(string filename)
         {
-            return (!string.IsNullOrWhiteSpace(filename)) ? UIImage.FromFile("Images/" + filename + ".jpg") : null;
+            return (!string.IsNullOrWhiteSpace(filename)) ? UIImage.FromFile(filename + ".jpg") : null;
         }
 
         public override void LayoutSubviews()
         {
             base.LayoutSubviews();
+            CellImageView.Frame = new CGRect(5, 0, 80, 80);
+            NameLabel.Frame = new CGRect(100, 4, ContentView.Bounds.Width - 63, 25);
+            TimeLabel.Frame = new CGRect(100, 30, 100, 20);
+            EventLabel.Frame = new CGRect(150, 30, 100, 20);
 
-            NameLabel.Frame = new CGRect(5, 4, ContentView.Bounds.Width - 63, 25);
-            TimeLabel.Frame = new CGRect(100, 18, 100, 20);
-            CellImageView.Frame = new CGRect(ContentView.Bounds.Width - 63, 5, 33, 33);
+
         }
     }
 }

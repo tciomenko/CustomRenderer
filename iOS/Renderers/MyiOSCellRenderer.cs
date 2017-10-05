@@ -40,7 +40,7 @@ namespace CustomRenderers.iOS.Renderers
             }
             else if (e.PropertyName == MyCell.TimeProperty.PropertyName)
             {
-                cell.EventLable.Text = myCell.EventFriends;
+                cell.EventLabel.Text = myCell.EventFriends;
             }
             else if (e.PropertyName == MyCell.ImageFilenameProperty.PropertyName)
             {
