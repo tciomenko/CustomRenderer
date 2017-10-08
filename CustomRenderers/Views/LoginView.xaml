@@ -12,13 +12,13 @@
         <StackLayout VerticalOptions="EndAndExpand">
         <StackLayout Orientation="Horizontal" Padding="15,0,0,0">
             <Image Source="login.png" WidthRequest="20" HeightRequest="10"  />
-            <Entry x:Name="login" Text="" TextColor="White" PropertyChanged="SignUpPropertyChanged" BackgroundColor="Transparent"
+            <Entry Text="{Binding Login}" TextColor="White" PropertyChanged="SignUpPropertyChanged" BackgroundColor="Transparent"
                 Placeholder="Login" HorizontalOptions="FillAndExpand"/>
         </StackLayout>
         
         <StackLayout Orientation="Horizontal"  Padding="15,0,0,0">
             <Image Source="pass.png" WidthRequest="20" HeightRequest="20" />
-            <Entry Text=""  TextColor="White" BackgroundColor="Transparent" PropertyChanged="SignUpPropertyChanged"  x:Name="pass" Placeholder="Password"
+            <Entry Text="{Binding Password}"  TextColor="White" BackgroundColor="Transparent" PropertyChanged="SignUpPropertyChanged" Placeholder="Password"
                     HorizontalOptions="FillAndExpand" 
             IsPassword="true"/>
         </StackLayout>
