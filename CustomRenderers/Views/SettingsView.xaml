@@ -7,7 +7,7 @@
         <StackLayout  VerticalOptions="Start">
         <Image Source="images1.jpg"  HeightRequest="300" />
         <Label Text="Name"  FontSize="25" Margin="10"/>
-        <ListView SeparatorVisibility="None" x:Name="settingList"> 
+        <ListView SeparatorVisibility="None" ItemsSource="{Binding ListSettringsModel}"> 
         <ListView.ItemTemplate>
             <DataTemplate>
                         <SwitchCell Text="{Binding Text}" On="{Binding On}"/>

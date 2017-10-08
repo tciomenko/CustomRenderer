@@ -86,6 +86,7 @@
     <Compile Include="Views\MyCell.cs" />
     <Compile Include="Models\LoginModel.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
+    <Compile Include="ViewModels\SettingsViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="XamForms.Controls.Calendar">

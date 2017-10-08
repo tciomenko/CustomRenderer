@@ -1,33 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
 using CustomRenderers.Models;
-
+using CustomRenderers.ViewModels;
 using Xamarin.Forms;
 
 namespace CustomRenderers.Views
 {
     public partial class SettingsView : ContentPage
     {
-        public ListView SettingList { get { return settingList; } }
+        public SettingsViewModel settingsViewModel;
         public SettingsView()
         {
             
             InitializeComponent();
-            NavigationPage.SetTitleIcon(this, "images1.jpg");
-            var settingItems=new List<SettingsModel> ();
-
-            settingItems.Add(new SettingsModel(){
-                On=true,
-                Text="Sound"
-            });
-			settingItems.Add(new SettingsModel()
-			{
-				On = false,
-				Text = "Notification"
-			});
-            settingList.ItemsSource = settingItems;
-                
-
+            settingsViewModel = new SettingsViewModel();
+            this.BindingContext = settingsViewModel;
         }
 
     }
