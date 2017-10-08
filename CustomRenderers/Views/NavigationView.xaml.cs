@@ -8,6 +8,7 @@ namespace CustomRenderers.Views
     public partial class NavigationView : ContentPage
     {
         public event EventHandler TappedOrClickEvent;
+
 		public ListView ListView { get { return listView; } }
 		public void FireClick(object sender, EventArgs e)
 		{

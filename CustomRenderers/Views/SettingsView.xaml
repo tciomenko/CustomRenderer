@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    x:Class="CustomRenderers.Views.SettingsView" Icon="images1.jpg" >
-	<ContentPage.Content>
-        
-        <StackLayout  VerticalOptions="Start">
-        <Image Source="images1.jpg"  HeightRequest="300" />
+    x:Class="CustomRenderers.Views.SettingsView" >
+        <StackLayout  VerticalOptions="Center">
+        <Image Source="images1.jpg"  Aspect="AspectFill" />
         <Label Text="Name"  FontSize="25" Margin="10"/>
         <ListView SeparatorVisibility="None" ItemsSource="{Binding ListSettringsModel}"> 
         <ListView.ItemTemplate>
@@ -16,5 +14,4 @@
         </ListView>
             </StackLayout>
         
-	</ContentPage.Content>
 </ContentPage>
