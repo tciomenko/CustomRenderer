@@ -7,34 +7,29 @@ namespace CustomRenderers.ViewModels
     public class LoginViewModel : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
-        private LoginModel login;
+        private LoginModel loginModel;
 
         public LoginViewModel()
         {
-            login = new LoginModel();
+            loginModel = new LoginModel();
         }
-        public LoginModel Login{
-            get { return login; }
-            set { login = value;
+
+        public string Login{
+            get { return loginModel.Login; }
+            set { loginModel.Login = value;
                 OnPropertyChanged("Login");
           }
         }
-        //public string Login{
-        //    get { return login.Login; }
-        //    set { login.Login = value;
-        //        OnPropertyChanged("Login");
-        //  }
-        //}
 
-        //public string Password
-        //{
-        //    get { return login.Password; }
-        //    set
-        //    {
-        //        login.Password = value;
-        //        OnPropertyChanged("Password");
-        //    }
-        //}
+        public string Password
+        {
+            get { return loginModel.Password; }
+            set
+            {
+                loginModel.Password = value;
+                OnPropertyChanged("Password");
+            }
+        }
 
         protected void OnPropertyChanged(string propName)
         {

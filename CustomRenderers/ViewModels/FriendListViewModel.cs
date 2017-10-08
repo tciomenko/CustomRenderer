@@ -37,11 +37,11 @@ namespace CustomRenderers.ViewModels
             for (var i = 0; i < 5;i++)
             masterPageItems.Add(new MyCellModel
             {
-                Name = "Home",
+                Name = "Юля",
                 ImageFilename = "circle.png",
-                EventFriends = "Event",
+                EventFriends = "Прогулка",
                 Time = "8-10pm",
-                TargetType = typeof(HomeView)
+                TargetType = typeof(FriendDetailView)
             });
 
 

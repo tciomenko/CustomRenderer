@@ -4,7 +4,9 @@
     xmlns:local="clr-namespace:CustomRenderers.Views;assembly=CustomRenderers"
     x:Class="CustomRenderers.Views.HomeView"
     BackgroundImage="kITvxi0Tf34.jpg" Padding="0">
+
   <ContentPage.Content>
+        
 <!--        <ScrollView>-->
         <StackLayout HorizontalOptions="FillAndExpand">
         <Label Text="Good Morning!" FontSize="35" TextColor="White" HorizontalOptions="Center"/>
@@ -13,10 +15,19 @@
             <ListView ItemsSource="{Binding MasterPageItems}" RowHeight="80" BackgroundColor="White" HasUnevenRows="true"
                 IsRefreshing="{Binding IsBusy}"  RefreshCommand="{Binding RefreshCommand}"
                 IsPullToRefreshEnabled="true">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-<local:MyCell Name="{Binding Name}" EventFriends="{Binding EventFriends}" Time="{Binding Time}"
-                        ImageFilename="{Binding ImageFilename}"/>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <local:MyCell Name="{Binding Name}" EventFriends="{Binding EventFriends}" Time="{Binding Time}"
+                        ImageFilename="{Binding ImageFilename}">
+                        <local:MyCell.ContextActions>
+                               
+                                <MenuItem Text="Add" Clicked="Add_Clicked"/>
+                                <MenuItem Text="Edit" Clicked="Edit_Clicked"/>
+                                <MenuItem Text="Delite" Clicked="Delite_Clicked"/>
+
+                            </local:MyCell.ContextActions>
+
+                        </local:MyCell>
                       <!--<ViewCell >
                             <StackLayout BackgroundColor="White" Orientation="Horizontal" Margin="0,5,0,5">
                                <Image Source="{Binding ImageFilename}"  WidthRequest="80" HeightRequest="80"/>

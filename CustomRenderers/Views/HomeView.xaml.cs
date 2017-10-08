@@ -23,6 +23,20 @@ namespace CustomRenderers.Views
 
 
 		}
+
+        void Add_Clicked(object sender, System.EventArgs e)
+        {
+            
+        }
+        void Edit_Clicked(object sender, System.EventArgs e)
+        {
+
+        }
+        void Delite_Clicked(object sender, System.EventArgs e)
+        {
+
+        }
+
         void Handle_Refreshing(object sender, System.EventArgs e)
         {
 
