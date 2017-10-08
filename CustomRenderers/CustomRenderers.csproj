@@ -84,6 +84,7 @@
       <DependentUpon>FriendDetailView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\MyCell.cs" />
+    <Compile Include="Models\LoginModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="XamForms.Controls.Calendar">
