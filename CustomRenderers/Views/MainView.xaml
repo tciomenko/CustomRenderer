@@ -4,11 +4,13 @@
                   xmlns:local="clr-namespace:CustomRenderers;assembly=CustomRenderers"
                   x:Class="CustomRenderers.Views.MainView"
                   MasterBehavior="Popover">
+    
     <MasterDetailPage.Master>
        <local:Views.NavigationView x:Name="NavigationView" />
     </MasterDetailPage.Master>
-    <MasterDetailPage.Detail>
-        <NavigationPage>
+    <MasterDetailPage.Detail >
+        <NavigationPage> 
+            
             <x:Arguments>
                 <local:Views.HomeView />
             </x:Arguments>
