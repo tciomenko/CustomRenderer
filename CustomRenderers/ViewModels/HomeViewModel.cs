@@ -9,14 +9,14 @@ using System.Threading.Tasks;
 
 namespace CustomRenderers.ViewModels
 {
-    public class FriendListViewModel:INotifyPropertyChanged
+    public class HomeViewModel:INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
         private bool isBusy = false;
 
         public List<MyCellModel> masterPageItems = new List<MyCellModel>();
 
-        public FriendListViewModel(){
+        public HomeViewModel(){
         }
         public ICommand RefreshCommand
         {
@@ -41,7 +41,7 @@ namespace CustomRenderers.ViewModels
                 ImageFilename = "circle.png",
                 EventFriends = "Прогулка",
                 Time = "8-10pm",
-                TargetType = typeof(FriendDetailView)
+                TargetType = typeof(HomeView)
             });
 
 
