@@ -8,26 +8,40 @@ namespace CustomRenderers.ViewModels
     {
         public event PropertyChangedEventHandler PropertyChanged;
         private LoginModel loginModel;
-
+        private string login, password;
         public LoginViewModel()
         {
             loginModel = new LoginModel();
         }
 
+        public LoginModel LoginModel
+        {
+            get { return loginModel; }
+            set
+            {
+                loginModel = value;
+                OnPropertyChanged(nameof(LoginModel));
+                this.Login = value.Login;
+                this.Password = value.Password;
+            }
+        }
         public string Login{
-            get { return loginModel.Login; }
-            set { loginModel.Login = value;
-                OnPropertyChanged("Login");
+            get {
+                return login; 
+            }
+            set {
+                login = value;
+                OnPropertyChanged(nameof(Login));
           }
         }
 
         public string Password
         {
-            get { return loginModel.Password; }
+            get { return password; }
             set
             {
-                loginModel.Password = value;
-                OnPropertyChanged("Password");
+                password = value;
+                OnPropertyChanged(nameof(Password));
             }
         }
 

@@ -31,7 +31,7 @@ namespace CustomRenderers.ViewModels
             set
             {
                 _listSettringsModel = value;
-                OnPropertyChanged("ListSettringsModel");
+                OnPropertyChanged(nameof(ListSettringsModel));
 
             }
         }

@@ -55,7 +55,7 @@ namespace CustomRenderers.ViewModels
             set
             {
                 masterPageItems = value;
-                OnPropertyChanged("MasterPageItems");
+                OnPropertyChanged(nameof(MasterPageItems));
 
             }
         }
@@ -69,7 +69,7 @@ namespace CustomRenderers.ViewModels
             set
             {
                 isBusy = value;
-                OnPropertyChanged("IsBusy");
+                OnPropertyChanged(nameof(IsBusy));
 
             }
         }

@@ -7,7 +7,7 @@ namespace CustomRenderers.Views
 {
 	public partial class HomeViewCell : ViewCell
 	{
-		//Label nameLabel, timeLabel, eventFriendsLabel;
+		
 
 		public static readonly BindableProperty NameProperty =
 		  BindableProperty.Create("Name", typeof(string), typeof(MyCell), "");
