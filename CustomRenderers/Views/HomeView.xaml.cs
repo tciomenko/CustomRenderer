@@ -39,5 +39,9 @@ namespace CustomRenderers.Views
 
 
 
+        void ButtonCircle_Clicked(object sender, System.EventArgs e)
+        {
+            ((ButtonCircle)sender).Opacity = 1;
+        }
     }
 }
