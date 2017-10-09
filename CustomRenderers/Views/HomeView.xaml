@@ -14,14 +14,14 @@
         <!--<Label Text="Good Morning!" FontSize="35" TextColor="White" HorizontalOptions="Center"/>
         <Button Image="circle.png" Opacity="1" Margin="20" BackgroundColor="Transparent"/>-->
             
-            <ListView ItemsSource="{Binding MasterPageItems}" RowHeight="80" BackgroundColor="White" HasUnevenRows="true"
+            <ListView ItemsSource="{Binding HomeModelProp.ListCell}" RowHeight="80" BackgroundColor="White" HasUnevenRows="true"
                 IsRefreshing="{Binding IsBusy}"  RefreshCommand="{Binding RefreshCommand}"
                 IsPullToRefreshEnabled="true" Header="">
                 <ListView.HeaderTemplate>
                     <DataTemplate>
                         <Grid>
                          <local:ButtonCircle BorderWidth="3" HorizontalOptions="Center"  VerticalOptions="Center"
-                                WidthRequest="200" HeightRequest="200" BorderRadius="100" BackgroundImage="images1.jpg" Clicked="ButtonCircle_Clicked"
+                                WidthRequest="200" HeightRequest="200" BorderRadius="100" BackgroundImage="{Binding UserImage}" Clicked="ButtonCircle_Clicked"
                             Opacity="1" BorderColor="White"   /> 
                         <!--<Label Text="Good Morning!" FontSize="35" TextColor="White" HorizontalOptions="Center"/>-->
 <!--                            <Image Source="circle.png"  Aspect="AspectFit"/>-->

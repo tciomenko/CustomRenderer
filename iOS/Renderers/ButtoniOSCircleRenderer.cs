@@ -12,7 +12,9 @@ namespace CustomRenderers.iOS.Renderers
     {
         ButtonCircle buttonCircle;
 
-
+        public ButtoniOSCircleRenderer(){
+            //buttonCircle = new ButtonCircle();
+        }
         public override void Draw(CoreGraphics.CGRect rect)
         {
             base.Draw(rect);

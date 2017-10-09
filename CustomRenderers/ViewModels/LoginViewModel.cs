@@ -8,7 +8,7 @@ namespace CustomRenderers.ViewModels
     {
         public event PropertyChangedEventHandler PropertyChanged;
         private LoginModel loginModel;
-        private string login, password;
+
         public LoginViewModel()
         {
             loginModel = new LoginModel();

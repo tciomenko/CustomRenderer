@@ -11,15 +11,15 @@ namespace CustomRenderers.Views
     public partial class HomeView : ContentPage
     {
         
-        private HomeViewModel friendList;
+        private HomeViewModel homeViewModel;
 
 
         public HomeView()
 		{
 			InitializeComponent();
-            friendList = new HomeViewModel();
-            friendList.SetMasterPageItem();
-            this.BindingContext = friendList;
+            homeViewModel = new HomeViewModel();
+            homeViewModel.SetMasterPageItem();
+            this.BindingContext = homeViewModel;
 
 
 		}

@@ -14,27 +14,30 @@ namespace CustomRenderers.ViewModels
         public event PropertyChangedEventHandler PropertyChanged;
         private bool isBusy = false;
         HomeModel homeModel = new HomeModel();
-        public List<MyCellModel> masterPageItems = new List<MyCellModel>();
-
+        //public List<MyCellModel> masterPageItems = new List<MyCellModel>();
+        public HomeViewModel(){
+            //SetMasterPageItem();
+        }
        
         public ICommand RefreshCommand
         {
             get
             {
-                return new Command(async () =>
+                return new Command(() =>
                 {
                     IsBusy = true;
-                    MasterPageItems.Clear();
-                    await SetMasterPageItem();
+                    //MasterPageItems.Clear();
+                    HomeModelProp.ListCell.Clear();
+                    SetMasterPageItem();
                     IsBusy = false;
                 });
             }
         }
 
 
-        public async Task SetMasterPageItem(){
+        public void SetMasterPageItem(){
             for (var i = 0; i < 5;i++)
-            masterPageItems.Add(new MyCellModel
+                HomeModelProp.ListCell.Add(new MyCellModel
             {
                 Name = "Юля",
                 ImageFileName = "circle.png",
@@ -42,22 +45,39 @@ namespace CustomRenderers.ViewModels
                 Time = "8-10pm",
                 TargetType = typeof(HomeView)
             });
+            HomeModelProp.BackgroundImage = "images1.jpg";
+            HomeModelProp.UserImage = "images1.jpg";
 
 
         }
-        public List<MyCellModel> MasterPageItems
+        public HomeModel HomeModelProp
         {
             get
             {
-                return masterPageItems;
+                return homeModel;
             }
             set
             {
-                masterPageItems = value;
-                OnPropertyChanged(nameof(MasterPageItems));
+                homeModel = value;
+                OnPropertyChanged(nameof(HomeModelProp));
 
             }
         }
+
+
+        //public List<MyCellModel> MasterPageItems
+        //{
+        //    get
+        //    {
+        //        return masterPageItems;
+        //    }
+        //    set
+        //    {
+        //        masterPageItems = value;
+        //        OnPropertyChanged(nameof(MasterPageItems));
+
+        //    }
+        //}
 
         public bool IsBusy
         {
