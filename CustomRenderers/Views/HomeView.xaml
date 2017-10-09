@@ -3,22 +3,33 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
     xmlns:local="clr-namespace:CustomRenderers.Views;assembly=CustomRenderers"
     x:Class="CustomRenderers.Views.HomeView"
-    BackgroundImage="kITvxi0Tf34.jpg" Padding="0">
+    BackgroundImage="kITvxi0Tf34.jpg" Padding="0"
+
+    >
 
   <ContentPage.Content>
         
 <!--        <ScrollView>-->
         <StackLayout HorizontalOptions="FillAndExpand">
-        <Label Text="Good Morning!" FontSize="35" TextColor="White" HorizontalOptions="Center"/>
-        <Button Image="circle.png" Opacity="1" Margin="20" BackgroundColor="Transparent"/>
-<!--            <ActivityIndicator x:Name="BusyIndicator" IsRunning="{Binding IsBusy}" IsVisible="{Binding IsBusy}"/>-->
+        <!--<Label Text="Good Morning!" FontSize="35" TextColor="White" HorizontalOptions="Center"/>
+        <Button Image="circle.png" Opacity="1" Margin="20" BackgroundColor="Transparent"/>-->
+            
             <ListView ItemsSource="{Binding MasterPageItems}" RowHeight="80" BackgroundColor="White" HasUnevenRows="true"
                 IsRefreshing="{Binding IsBusy}"  RefreshCommand="{Binding RefreshCommand}"
-                IsPullToRefreshEnabled="true">
+                IsPullToRefreshEnabled="true" Header="">
+                <ListView.HeaderTemplate>
+                    <DataTemplate>
+                        <Grid>
+                         <local:ButtonCircle Image="images1.jpg"/> 
+                        <!--<Label Text="Good Morning!" FontSize="35" TextColor="White" HorizontalOptions="Center"/>-->
+<!--                            <Image Source="circle.png"  Aspect="AspectFit"/>-->
+                        </Grid>
+                    </DataTemplate>
+            </ListView.HeaderTemplate>
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <local:MyCell Name="{Binding Name}" EventFriends="{Binding EventFriends}" Time="{Binding Time}"
-                        ImageFilename="{Binding ImageFilename}">
+                        ImageFilename="{Binding ImageFileName}">
                         <local:MyCell.ContextActions>
                                
                                 <MenuItem Text="Add" Clicked="Add_Clicked"/>

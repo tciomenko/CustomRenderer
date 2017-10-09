@@ -11,13 +11,13 @@ namespace CustomRenderers.Views
     public partial class HomeView : ContentPage
     {
         
-        private FriendListViewModel friendList;
+        private HomeViewModel friendList;
 
 
         public HomeView()
 		{
 			InitializeComponent();
-            friendList = new FriendListViewModel();
+            friendList = new HomeViewModel();
             friendList.SetMasterPageItem();
             this.BindingContext = friendList;
 
@@ -37,12 +37,6 @@ namespace CustomRenderers.Views
 
         }
 
-        void Handle_Refreshing(object sender, System.EventArgs e)
-        {
-
-                //listView.IsRefreshing = true;
-                //listView.IsRefreshing = false;
-        }
 
 
     }

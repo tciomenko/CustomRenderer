@@ -32,7 +32,7 @@ namespace CustomRenderers.Views
         public static readonly BindableProperty ImageFilenameProperty =
           BindableProperty.Create("ImageFilename", typeof(string), typeof(MyCell), "");
 
-        public string ImageFilename
+        public string ImageFileName
         {
             get { return (string)GetValue(ImageFilenameProperty); }
             set { SetValue(ImageFilenameProperty, value); }

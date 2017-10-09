@@ -38,7 +38,7 @@ namespace CustomRenderers.ViewModels
             masterPageItems.Add(new MyCellModel
             {
                 Name = "Юля",
-                ImageFilename = "circle.png",
+                ImageFileName = "circle.png",
                 EventFriends = "Прогулка",
                 Time = "8-10pm",
                 TargetType = typeof(HomeView)

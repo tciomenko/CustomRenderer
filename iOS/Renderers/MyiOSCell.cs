@@ -56,7 +56,7 @@ namespace CustomRenderers.iOS.Renderers
             NameLabel.Text = cell.Name;
             TimeLabel.Text = cell.Time;
             EventLabel.Text = cell.EventFriends;
-            CellImageView.Image = GetImage(cell.ImageFilename);
+            CellImageView.Image = GetImage(cell.ImageFileName);
         }
 
         public UIImage GetImage(string filename)

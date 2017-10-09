@@ -44,7 +44,7 @@ namespace CustomRenderers.iOS.Renderers
             }
             else if (e.PropertyName == MyCell.ImageFilenameProperty.PropertyName)
             {
-                cell.CellImageView.Image = cell.GetImage(myCell.ImageFilename);
+                cell.CellImageView.Image = cell.GetImage(myCell.ImageFileName);
             }
         }
     }

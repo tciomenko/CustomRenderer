@@ -18,9 +18,9 @@ namespace CustomRenderers.Views
 
         void SignUpPropertyChanged(object sender, PropertyChangedEventArgs e)
         {
-            if(loginViewModel!=null)
-            if (loginViewModel.Login != null && loginViewModel.Password != null)
-            if(loginViewModel.Login!=""&&loginViewModel.Password!=""){
+            if(loginViewModel.LoginModel!=null)
+            if (loginViewModel.LoginModel.Login != null && loginViewModel.LoginModel.Password != null)
+            if(loginViewModel.LoginModel.Login!=""&&loginViewModel.LoginModel.Password!=""){
                 signIn.IsEnabled = true;
             }
             else{
