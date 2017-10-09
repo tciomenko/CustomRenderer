@@ -89,6 +89,7 @@
     <Compile Include="ViewModels\FriendDetailViewModel.cs" />
     <Compile Include="Models\FriendDetailModel.cs" />
     <Compile Include="Views\ButtonCircle.cs" />
+    <Compile Include="Models\HomeModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="XamForms.Controls.Calendar">

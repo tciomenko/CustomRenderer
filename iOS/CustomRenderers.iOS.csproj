@@ -130,7 +130,6 @@
     <Compile Include="AppDelegate.cs" />
     <Compile Include="Renderers\MyiOSCellRenderer.cs" />
     <Compile Include="Renderers\MyiOSCell.cs" />
-    <Compile Include="Renderers\ButtoniOSCircle.cs" />
     <Compile Include="Renderers\ButtoniOSCircleRenderer.cs" />
   </ItemGroup>
   <ItemGroup>

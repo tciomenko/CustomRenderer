@@ -7,15 +7,15 @@ namespace CustomRenderers.Views
 {
     public partial class MainView : MasterDetailPage
     {
-        
+        NavigationView navigationView;
         public MainView()
         {
             
             InitializeComponent();
-            //navigationView = new NavigationView();
-            //Detail = new NavigationPage((Page)Activator.CreateInstance(typeof(HomeView)));
-            //IsPresented = false;
-            //Master = navigationView;
+            navigationView = new NavigationView();
+            Detail = new NavigationPage((Page)Activator.CreateInstance(typeof(HomeView)));
+            IsPresented = false;
+            Master = navigationView;
             NavigationView.ListView.ItemSelected+= OnItemSelected;
             NavigationView.TappedOrClickEvent += Presented;
         }

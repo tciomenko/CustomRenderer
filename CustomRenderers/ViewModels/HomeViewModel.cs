@@ -13,11 +13,10 @@ namespace CustomRenderers.ViewModels
     {
         public event PropertyChangedEventHandler PropertyChanged;
         private bool isBusy = false;
-
+        HomeModel homeModel = new HomeModel();
         public List<MyCellModel> masterPageItems = new List<MyCellModel>();
 
-        public HomeViewModel(){
-        }
+       
         public ICommand RefreshCommand
         {
             get

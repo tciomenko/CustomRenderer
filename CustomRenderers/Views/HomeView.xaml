@@ -20,8 +20,8 @@
                 <ListView.HeaderTemplate>
                     <DataTemplate>
                         <Grid>
-                         <local:ButtonCircle BorderWidth="3" HorizontalOptions="Center" VerticalOptions="Center"
-                                WidthRequest="200" HeightRequest="200" Clicked="ButtonCircle_Clicked"
+                         <local:ButtonCircle BorderWidth="3" HorizontalOptions="Center"  VerticalOptions="Center"
+                                WidthRequest="200" HeightRequest="200" BorderRadius="100" BackgroundImage="images1.jpg" Clicked="ButtonCircle_Clicked"
                             Opacity="1" BorderColor="White"   /> 
                         <!--<Label Text="Good Morning!" FontSize="35" TextColor="White" HorizontalOptions="Center"/>-->
 <!--                            <Image Source="circle.png"  Aspect="AspectFit"/>-->

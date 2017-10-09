@@ -10,26 +10,31 @@ namespace CustomRenderers.iOS.Renderers
 {
     public class ButtoniOSCircleRenderer:ButtonRenderer
     {
-        
-        
+        ButtonCircle buttonCircle;
+
 
         public override void Draw(CoreGraphics.CGRect rect)
         {
             base.Draw(rect);
+
 
         }
         protected override void OnElementChanged(ElementChangedEventArgs<Button> e)
         {
             base.OnElementChanged(e);
 
-             if (e.OldElement!= null)
+
+            buttonCircle = (ButtonCircle)this.Element;
+            if (e.OldElement!= null)
             {
 
+            }else if(e.NewElement!=null){
+                
             }
             if(Control!=null){
-                Control.Layer.CornerRadius = 100;
+                Control.Layer.CornerRadius = buttonCircle.BorderRadius;
                 Control.ClipsToBounds = true;
-                Control.SetBackgroundImage(UIImage.FromFile("images1.jpg"),UIControlState.Normal);
+                Control.SetBackgroundImage(UIImage.FromFile(buttonCircle.BackgroundImage),UIControlState.Normal);
 
                     
             }
