@@ -48,6 +48,9 @@
     <EmbeddedResource Include="Views\FriendDetailView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\UserImageView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.xaml.cs">
@@ -90,6 +93,10 @@
     <Compile Include="Models\FriendDetailModel.cs" />
     <Compile Include="Views\ButtonCircle.cs" />
     <Compile Include="Models\HomeModel.cs" />
+    <Compile Include="Views\ImageCircle.cs" />
+    <Compile Include="Views\UserImageView.xaml.cs">
+      <DependentUpon>UserImageView.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="XamForms.Controls.Calendar">

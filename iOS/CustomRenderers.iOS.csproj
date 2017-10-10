@@ -131,6 +131,7 @@
     <Compile Include="Renderers\MyiOSCellRenderer.cs" />
     <Compile Include="Renderers\MyiOSCell.cs" />
     <Compile Include="Renderers\ButtoniOSCircleRenderer.cs" />
+    <Compile Include="Renderers\ImageiOSCircleRenderer.cs" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\image.jpg" />

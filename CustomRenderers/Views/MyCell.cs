@@ -18,8 +18,6 @@ namespace CustomRenderers.Views
             set { SetValue(NameProperty, value); }
         }
 
-
-
         public static readonly BindableProperty TimeProperty =
           BindableProperty.Create("Time", typeof(string), typeof(MyCell), "");
 

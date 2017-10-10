@@ -5,13 +5,13 @@ namespace CustomRenderers.Views
 {
     public class ButtonCircle:Button
     {
-        public static readonly BindableProperty NameProperty =
+        public static readonly BindableProperty BackgroundImageProperty =
             BindableProperty.Create("BackgroundImage", typeof(string), typeof(ButtonCircle), "");
 
         public string BackgroundImage
         {
-            get { return (string)GetValue(NameProperty); }
-            set { SetValue(NameProperty, value); }
+            get { return (string)GetValue(BackgroundImageProperty); }
+            set { SetValue(BackgroundImageProperty, value); }
         }
     }
 }

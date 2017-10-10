@@ -29,6 +29,7 @@ namespace CustomRenderers.iOS.Renderers
         }
         void OnMyCellPropertyChanged(object sender, PropertyChangedEventArgs e)
         {
+            
             var myCell = (MyCell)sender;
             if (e.PropertyName == MyCell.NameProperty.PropertyName)
             {
@@ -44,7 +45,8 @@ namespace CustomRenderers.iOS.Renderers
             }
             else if (e.PropertyName == MyCell.ImageFilenameProperty.PropertyName)
             {
-                cell.CellImageView.Image = cell.GetImage(myCell.ImageFileName);
+                cell.ImageCircle.Element.Source = ImageSource.FromFile(myCell.ImageFileName);
+                //cell.ImageCircle.Control.Image = UIImage.FromFile(myCell.ImageFileName);
             }
         }
     }

@@ -63,6 +63,19 @@ namespace CustomRenderers.ViewModels
 
             }
         }
+        public string UserImage
+        {
+            get
+            {
+                return homeModel.UserImage;
+            }
+            set
+            {
+                homeModel.UserImage = value;
+                OnPropertyChanged(nameof(UserImage));
+
+            }
+        }
 
 
         //public List<MyCellModel> MasterPageItems

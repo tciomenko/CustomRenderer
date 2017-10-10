@@ -21,8 +21,14 @@ namespace CustomRenderers.Views
             homeViewModel.SetMasterPageItem();
             this.BindingContext = homeViewModel;
 
-
 		}
+
+        void OnTapGestureRecognizerTapped(object sender, EventArgs args)
+        {
+            var i = sender as ImageCircle;
+            //if(i!=null)
+                //Navigation.PushModalAsync(new FriendDetailView(i.ImageName));
+        }
 
         void Add_Clicked(object sender, System.EventArgs e)
         {
@@ -37,11 +43,5 @@ namespace CustomRenderers.Views
 
         }
 
-
-
-        void ButtonCircle_Clicked(object sender, System.EventArgs e)
-        {
-            ((ButtonCircle)sender).Opacity = 1;
-        }
     }
 }
