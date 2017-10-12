@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ViewCell  xmlns="http://xamarin.com/schemas/2014/forms"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:local="clr-namespace:CustomRenderers.Views;assembly=CustomRenderers"
+            x:Class="CustomRenderers.Views.FriendCell">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="38" />
+            <RowDefinition Height="38" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="80" />
+            <ColumnDefinition Width="*" />
+
+        </Grid.ColumnDefinitions>
+
+        <local:ImageCircle x:Name="ImageCircle"  HeightRequest="80" WidthRequest="80" Aspect="AspectFill"  
+        ImageName="{Binding ImageFileName}" Grid.RowSpan="2" VerticalOptions="Center"/>
+        <Label Text="{Binding Name}" Grid.Column="1" FontSize="18" VerticalOptions="Center"/>
+        <Label Text="{Binding EventFriends}" Grid.Row="1" Grid.Column="1" FontSize="14" TextColor="Gray" VerticalOptions="Center"/>
+
+
+</Grid>
+
+</ViewCell>

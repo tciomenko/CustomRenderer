@@ -51,6 +51,9 @@
     <EmbeddedResource Include="Views\UserImageView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\FriendCell.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.xaml.cs">
@@ -96,6 +99,9 @@
     <Compile Include="Views\ImageCircle.cs" />
     <Compile Include="Views\UserImageView.xaml.cs">
       <DependentUpon>UserImageView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FriendCell.xaml.cs">
+      <DependentUpon>FriendCell.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

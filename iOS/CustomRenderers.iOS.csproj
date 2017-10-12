@@ -119,6 +119,8 @@
   <ItemGroup>
     <Folder Include="Resources\" />
     <Folder Include="Renderers\" />
+    <Folder Include="Native\" />
+    <Folder Include="Helpers\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -132,6 +134,9 @@
     <Compile Include="Renderers\MyiOSCell.cs" />
     <Compile Include="Renderers\ButtoniOSCircleRenderer.cs" />
     <Compile Include="Renderers\ImageiOSCircleRenderer.cs" />
+    <Compile Include="Native\FriendNativeCell.cs" />
+    <Compile Include="Helpers\FormsViewToNativeiOS.cs" />
+    <Compile Include="Renderers\FriendIOSCellRenderer.cs" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\image.jpg" />
@@ -146,6 +151,8 @@
     <BundleResource Include="Resources\Home.png" />
     <BundleResource Include="Resources\Settings.png" />
     <BundleResource Include="Resources\Logout.png" />
+    <BundleResource Include="Resources\Close.png" />
+    <BundleResource Include="Resources\BillGates.jpg" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="LaunchScreen.storyboard" />

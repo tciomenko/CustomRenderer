@@ -3,7 +3,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
     xmlns:local="clr-namespace:CustomRenderers.Views;assembly=CustomRenderers"
     x:Class="CustomRenderers.Views.HomeView"
-    BackgroundImage="kITvxi0Tf34.jpg" Padding="0">
+    BackgroundImage="kITvxi0Tf34.jpg" >
 
   <ContentPage.Content>
         
@@ -13,32 +13,41 @@
         <!--<Label Text="Good Morning!" FontSize="35" TextColor="White" HorizontalOptions="Center"/>
         <Button Image="circle.png" Opacity="1" Margin="20" BackgroundColor="Transparent"/>-->
             
-            <ListView ItemsSource="{Binding HomeModelProp.ListCell}" RowHeight="80" BackgroundColor="White"  HasUnevenRows="true"
+            <ListView ItemsSource="{Binding HomeModelProp.ListCell}" RowHeight="83" BackgroundColor="White"  HasUnevenRows="true"
                 IsRefreshing="{Binding IsBusy}"  RefreshCommand="{Binding RefreshCommand}"
-                IsPullToRefreshEnabled="true" Header="">
+                IsPullToRefreshEnabled="true" Header="" >
                 <ListView.HeaderTemplate>
                     <DataTemplate>
-                        <Grid >
+                        <Grid BackgroundColor="Transparent">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="100"/>
+                                <RowDefinition Height="100"/>
+                                <RowDefinition Height="40"/>
+                            </Grid.RowDefinitions>
                             <local:ImageCircle x:Name="imageCircle" WidthRequest="200" HeightRequest="200" Aspect="AspectFill" 
-                            HorizontalOptions="Center" VerticalOptions="Center" ImageName="images1.jpg" >
+                            HorizontalOptions="Center" VerticalOptions="Center"  ImageName="images1.jpg" Grid.RowSpan="2" >
                             <local:ImageCircle.GestureRecognizers>
-                                   
                                 <TapGestureRecognizer
                                 Tapped="OnTapGestureRecognizerTapped"   />
                                 </local:ImageCircle.GestureRecognizers>
                             </local:ImageCircle>
+                            <Label Text="Доброе утро!" FontSize="35" TextColor="Black" HorizontalOptions="Center" Grid.Row="2"/>
+
                          <!--<local:ButtonCircle BorderWidth="3" HorizontalOptions="Center"  VerticalOptions="Center"
                                 WidthRequest="200" HeightRequest="200" BorderRadius="100" BackgroundImage="images1.jpg" Clicked="ButtonCircle_Clicked"
                             Opacity="1" BorderColor="White"   /> -->
-                        <!--<Label Text="Good Morning!" FontSize="35" TextColor="White" HorizontalOptions="Center"/>-->
+                        
                             <!--<Image Source="circle.png"    Aspect="AspectFit"/>-->
                         </Grid>
                     </DataTemplate>
             </ListView.HeaderTemplate>
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <local:MyCell Name="{Binding Name}" EventFriends="{Binding EventFriends}" Time="{Binding Time}"
-                        ImageFilename="{Binding ImageFileName}">
+                        <local:FriendCell Name="{Binding Name}" EventFriends="{Binding EventFriends}" Time="{Binding Time}"
+                        ImageFileName="{Binding ImageFileName}" />
+                       <!--<local:MyCell Name="{Binding Name}" EventFriends="{Binding EventFriends}" Time="{Binding Time}"
+                        ImageFileName="{Binding ImageFileName}">
+                            
                         <local:MyCell.ContextActions>
                                
                                 <MenuItem Text="Add" Clicked="Add_Clicked"/>
@@ -47,7 +56,8 @@
 
                             </local:MyCell.ContextActions>
 
-                        </local:MyCell>
+                        </local:MyCell>-->
+
                       <!--<ViewCell >
                             <StackLayout BackgroundColor="White" Orientation="Horizontal" Margin="0,5,0,5">
                                <Image Source="{Binding ImageFilename}"  WidthRequest="80" HeightRequest="80"/>

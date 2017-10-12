@@ -7,6 +7,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Platform.iOS;
 using CustomRenderers.Views;
 using CustomRenderers.iOS.Renderers;
+using CustomRenderers.iOS.Native;
 
 [assembly:ExportRenderer(typeof(MyCell),typeof(MyiOSCellRenderer))]
 namespace CustomRenderers.iOS.Renderers
@@ -27,6 +28,7 @@ namespace CustomRenderers.iOS.Renderers
             cell.UpdateCell(myCell);
             return cell;
         }
+        
         void OnMyCellPropertyChanged(object sender, PropertyChangedEventArgs e)
         {
             
@@ -43,9 +45,9 @@ namespace CustomRenderers.iOS.Renderers
             {
                 cell.EventLabel.Text = myCell.EventFriends;
             }
-            else if (e.PropertyName == MyCell.ImageFilenameProperty.PropertyName)
+            else if (e.PropertyName == MyCell.ImageFileNameProperty.PropertyName)
             {
-                cell.ImageCircle.Element.Source = ImageSource.FromFile(myCell.ImageFileName);
+                //cell.ImageCircle.Element.Source = ImageSource.FromFile(myCell.ImageFileName);
                 //cell.ImageCircle.Control.Image = UIImage.FromFile(myCell.ImageFileName);
             }
         }

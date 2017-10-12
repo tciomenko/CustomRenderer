@@ -13,20 +13,17 @@ namespace CustomRenderers.iOS.Renderers
         public UILabel NameLabel { get; set; }
         public UILabel TimeLabel { get; set; }
         public UILabel EventLabel { get; set; }
-        //public UIImageView CellImageView { get; set; }
-        public ImageiOSCircleRenderer ImageCircle { get; set; }
+        public UIImageView CellImageView { get; set; }
+        //public ImageiOSCircleRenderer ImageCircle { get; set; }
         public MyCell MyCell;
         public Element Element => MyCell;
 
-        public MyiOSCell(string cellId,MyCell cell):base(UITableViewCellStyle.Default,cellId)
+        public MyiOSCell(string cellId, MyCell cell) : base(UITableViewCellStyle.Default, cellId)
         {
             MyCell = cell;
             SelectionStyle = UITableViewCellSelectionStyle.Gray;
             ContentView.BackgroundColor = UIColor.FromRGB(255, 255, 255);
-            ImageCircle = new ImageiOSCircleRenderer()
-            {
-                
-            };
+            CellImageView = new UIImageView();
 
             NameLabel = new UILabel()
             {
@@ -48,7 +45,7 @@ namespace CustomRenderers.iOS.Renderers
                 BackgroundColor = UIColor.Clear
             };
 
-            ContentView.Add(ImageCircle);
+            ContentView.Add(CellImageView);
             ContentView.Add(NameLabel);
             ContentView.Add(TimeLabel);
             ContentView.Add(EventLabel);
@@ -60,8 +57,11 @@ namespace CustomRenderers.iOS.Renderers
             NameLabel.Text = cell.Name;
             TimeLabel.Text = cell.Time;
             EventLabel.Text = cell.EventFriends;
+            
             //ImageCircle.Element.Source = ImageSource.FromFile(cell.ImageFileName);  
-            ImageCircle.Control.Image= GetImage(cell.ImageFileName);
+            CellImageView.Image= GetImage(cell.ImageFileName);
+            CellImageView.Layer.CornerRadius = 40f;
+
         }
 
         public UIImage GetImage(string filename)
@@ -72,7 +72,7 @@ namespace CustomRenderers.iOS.Renderers
         public override void LayoutSubviews()
         {
             base.LayoutSubviews();
-            ImageCircle.Frame = new CGRect(5, 0, 80, 80);
+            CellImageView.Frame = new CGRect(5, 0, 80, 80);
             NameLabel.Frame = new CGRect(100, 4, ContentView.Bounds.Width - 63, 25);
             TimeLabel.Frame = new CGRect(100, 30, 100, 20);
             EventLabel.Frame = new CGRect(150, 30, 100, 20);

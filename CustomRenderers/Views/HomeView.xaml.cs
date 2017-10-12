@@ -25,9 +25,8 @@ namespace CustomRenderers.Views
 
         void OnTapGestureRecognizerTapped(object sender, EventArgs args)
         {
-            var i = sender as ImageCircle;
-            //if(i!=null)
-                //Navigation.PushModalAsync(new FriendDetailView(i.ImageName));
+            
+            Navigation.PushModalAsync(new UserImageView(homeViewModel.UserImage), true);
         }
 
         void Add_Clicked(object sender, System.EventArgs e)

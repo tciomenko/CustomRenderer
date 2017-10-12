@@ -36,13 +36,69 @@ namespace CustomRenderers.ViewModels
 
 
         public void SetMasterPageItem(){
-            for (var i = 0; i < 5;i++)
-                HomeModelProp.ListCell.Add(new MyCellModel
+            
+            HomeModelProp.ListCell.Add(new MyCellModel
             {
-                Name = "Юля",
-                ImageFileName = "circle.png",
-                EventFriends = "Прогулка",
+                Name = "Bill Gates",
+                ImageFileName = "BillGates.jpg",
+                EventFriends = "Кронфиренция",
                 Time = "8-10pm",
+                TargetType = typeof(HomeView)
+            });
+            HomeModelProp.ListCell.Add(new MyCellModel
+            {
+                Name = "Юлия",
+                ImageFileName = "images1.jpg",
+                EventFriends = "Пробежка",
+                Time = "6-7pm",
+                TargetType = typeof(HomeView)
+            });
+            HomeModelProp.ListCell.Add(new MyCellModel
+            {
+                Name = "Bill Gates",
+                ImageFileName = "BillGates.jpg",
+                EventFriends = "Кронфиренция",
+                Time = "8-10pm",
+                TargetType = typeof(HomeView)
+            });
+            HomeModelProp.ListCell.Add(new MyCellModel
+            {
+                Name = "Юлия",
+                ImageFileName = "images1.jpg",
+                EventFriends = "Пробежка",
+                Time = "6-7pm",
+                TargetType = typeof(HomeView)
+            });
+            HomeModelProp.ListCell.Add(new MyCellModel
+            {
+                Name = "Bill Gates",
+                ImageFileName = "BillGates.jpg",
+                EventFriends = "Кронфиренция",
+                Time = "8-10pm",
+                TargetType = typeof(HomeView)
+            });
+            HomeModelProp.ListCell.Add(new MyCellModel
+            {
+                Name = "Юлия",
+                ImageFileName = "images1.jpg",
+                EventFriends = "Пробежка",
+                Time = "6-7pm",
+                TargetType = typeof(HomeView)
+            });
+            HomeModelProp.ListCell.Add(new MyCellModel
+            {
+                Name = "Bill Gates",
+                ImageFileName = "BillGates.jpg",
+                EventFriends = "Кронфиренция",
+                Time = "8-10pm",
+                TargetType = typeof(HomeView)
+            });
+            HomeModelProp.ListCell.Add(new MyCellModel
+            {
+                Name = "Юлия",
+                ImageFileName = "images1.jpg",
+                EventFriends = "Пробежка",
+                Time = "6-7pm",
                 TargetType = typeof(HomeView)
             });
             HomeModelProp.BackgroundImage = "images1.jpg";

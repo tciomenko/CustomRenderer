@@ -1,14 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 using Xamarin.Forms;
 
 namespace CustomRenderers.Views
 {
-    public partial class MyCell:ViewCell
+    public partial class FriendCell : ViewCell
     {
-        //Label nameLabel, timeLabel, eventFriendsLabel;
-        
+        public FriendCell()
+        {
+            InitializeComponent();
+        }
+        protected override void OnBindingContextChanged()
+        {
+            base.OnBindingContextChanged();
+            
+        }
         public static readonly BindableProperty NameProperty =
           BindableProperty.Create("Name", typeof(string), typeof(MyCell), "");
 
@@ -24,7 +34,7 @@ namespace CustomRenderers.Views
         public string Time
         {
             get { return (string)GetValue(TimeProperty); }
-            set { SetValue(TimeProperty, value);}
+            set { SetValue(TimeProperty, value); }
         }
 
         public static readonly BindableProperty ImageFileNameProperty =
@@ -36,13 +46,13 @@ namespace CustomRenderers.Views
             set { SetValue(ImageFileNameProperty, value); }
         }
 
-		public static readonly BindableProperty EventFriendsProperty =
-		  BindableProperty.Create("EventFriends", typeof(string), typeof(MyCell), "");
+        public static readonly BindableProperty EventFriendsProperty =
+          BindableProperty.Create("EventFriends", typeof(string), typeof(MyCell), "");
 
-		public string EventFriends
-		{           
+        public string EventFriends
+        {
             get { return (string)GetValue(EventFriendsProperty); }
             set { SetValue(EventFriendsProperty, value); }
-		}
+        }
     }
 }

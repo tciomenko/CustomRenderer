@@ -12,7 +12,7 @@ namespace CustomRenderers.iOS.Renderers
 {
     public class ImageiOSCircleRenderer:ImageRenderer
     {
-        ImageCircle image;
+        public ImageCircle image;
         double min;
         public ImageiOSCircleRenderer()
         {
