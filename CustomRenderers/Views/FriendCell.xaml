@@ -5,21 +5,22 @@
             x:Class="CustomRenderers.Views.FriendCell">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="38" />
-            <RowDefinition Height="38" />
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="25"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="80" />
+            <ColumnDefinition Width="85" />
             <ColumnDefinition Width="*" />
-
+            <ColumnDefinition Width="80" />
         </Grid.ColumnDefinitions>
-
-        <local:ImageCircle x:Name="ImageCircle"  HeightRequest="80" WidthRequest="80" Aspect="AspectFill"  
-        ImageName="{Binding ImageFileName}" Grid.RowSpan="2" VerticalOptions="Center"/>
-        <Label Text="{Binding Name}" Grid.Column="1" FontSize="18" VerticalOptions="Center"/>
-        <Label Text="{Binding EventFriends}" Grid.Row="1" Grid.Column="1" FontSize="14" TextColor="Gray" VerticalOptions="Center"/>
-
-
-</Grid>
+        <local:ImageCircle x:Name="ImageCircle"  HeightRequest="80" WidthRequest="80" HorizontalOptions="End" Aspect="AspectFill"  
+                    ImageName="{Binding ImageFileName}" Grid.RowSpan="3" VerticalOptions="Center"/>
+        <Label Text="{Binding Name}" Grid.Column="1" FontSize="18" VerticalOptions="End" />
+        <Label Text="{Binding Time}" Grid.Row="0" Grid.Column="2" FontSize="12" TextColor="Gray"
+                    VerticalOptions="End" HorizontalOptions="End"/>
+        <Label Text="{Binding EventFriends}" Grid.Row="1" Grid.Column="1" FontSize="14"
+                    TextColor="Gray" VerticalOptions="Start" HorizontalOptions="Start"/>
+    </Grid>
 
 </ViewCell>

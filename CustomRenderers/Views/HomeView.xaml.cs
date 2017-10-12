@@ -17,6 +17,7 @@ namespace CustomRenderers.Views
         public HomeView()
 		{
 			InitializeComponent();
+            
             homeViewModel = new HomeViewModel();
             homeViewModel.SetMasterPageItem();
             this.BindingContext = homeViewModel;
@@ -25,8 +26,12 @@ namespace CustomRenderers.Views
 
         void OnTapGestureRecognizerTapped(object sender, EventArgs args)
         {
-            
-            Navigation.PushModalAsync(new UserImageView(homeViewModel.UserImage), true);
+            var nav = new NavigationPage(new UserImagePage(homeViewModel.UserImage));
+            var toolbar = new ToolbarItem("Close", "Close.png", () => { Navigation.PopModalAsync(); }, ToolbarItemOrder.Default);
+            nav.HeightRequest = 100;
+            nav.ToolbarItems.Add(toolbar);
+
+            Navigation.PushModalAsync(nav);
         }
 
         void Add_Clicked(object sender, System.EventArgs e)

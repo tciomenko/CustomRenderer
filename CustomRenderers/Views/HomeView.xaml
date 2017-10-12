@@ -3,8 +3,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
     xmlns:local="clr-namespace:CustomRenderers.Views;assembly=CustomRenderers"
     x:Class="CustomRenderers.Views.HomeView"
-    BackgroundImage="kITvxi0Tf34.jpg" >
-
+    BackgroundImage="kITvxi0Tf34.jpg">
   <ContentPage.Content>
         
 <!--        <ScrollView>-->
@@ -13,7 +12,7 @@
         <!--<Label Text="Good Morning!" FontSize="35" TextColor="White" HorizontalOptions="Center"/>
         <Button Image="circle.png" Opacity="1" Margin="20" BackgroundColor="Transparent"/>-->
             
-            <ListView ItemsSource="{Binding HomeModelProp.ListCell}" RowHeight="83" BackgroundColor="White"  HasUnevenRows="true"
+            <ListView ItemsSource="{Binding HomeModelProp.ListCell}" RowHeight="86" BackgroundColor="White"  HasUnevenRows="true"
                 IsRefreshing="{Binding IsBusy}"  RefreshCommand="{Binding RefreshCommand}"
                 IsPullToRefreshEnabled="true" Header="" >
                 <ListView.HeaderTemplate>

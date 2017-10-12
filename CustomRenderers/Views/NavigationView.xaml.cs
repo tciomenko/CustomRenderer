@@ -18,10 +18,6 @@ namespace CustomRenderers.Views
 		public NavigationView()
         {
 			InitializeComponent();
-   
-
-
-
 			var masterPageItems = new List<NavigationPageItem>();
 
 			masterPageItems.Add(new NavigationPageItem

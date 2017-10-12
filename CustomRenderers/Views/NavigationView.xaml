@@ -3,7 +3,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="CustomRenderers.Views.NavigationView"
     Icon="hamburger.png"  Title="Personal Organiser" BackgroundColor="White">
-    <StackLayout  Padding="0,0,0,0">
+    <StackLayout>
 <!--        <Image Source="images1.jpg"  Aspect="AspectFill"/>-->
           <!--     <Button Text="X" x:Name="ExitButton" BackgroundColor="Transparent"  HorizontalOptions="Start"  Clicked="FireClick"/>-->
         <ListView x:Name="listView" SeparatorVisibility="None" Header="">

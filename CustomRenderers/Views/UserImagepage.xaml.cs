@@ -4,9 +4,9 @@ using Xamarin.Forms;
 
 namespace CustomRenderers.Views
 {
-    public partial class UserImageView : ContentPage
+    public partial class UserImagePage : ContentPage
     {
-        public UserImageView(string fileImageName)
+        public UserImagePage(string fileImageName)
         {
             InitializeComponent();
             Image.ImageName = fileImageName;

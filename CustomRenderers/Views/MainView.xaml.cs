@@ -12,8 +12,11 @@ namespace CustomRenderers.Views
         {
             
             InitializeComponent();
+
             navigationView = new NavigationView();
-            Detail = new NavigationPage((Page)Activator.CreateInstance(typeof(HomeView)));
+            var navPage=new NavigationPage((Page)Activator.CreateInstance(typeof(HomeView)));
+            navPage.BarBackgroundColor = Color.Blue;
+            Detail = navPage;
             IsPresented = false;
             Master = navigationView;
             NavigationView.ListView.ItemSelected+= OnItemSelected;
