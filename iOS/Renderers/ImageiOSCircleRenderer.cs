@@ -40,6 +40,10 @@ namespace CustomRenderers.iOS.Renderers
                 Control.Image = UIImage.FromFile(image.ImageName);
                 Control.Layer.MasksToBounds = false;
                 Control.ClipsToBounds = true;
+                //Control.Layer.ShadowRadius = 30f;
+                //Control.Layer.ShadowColor =new CGColor(255,0,255);
+                //Control.Layer.ShadowOpacity = 0.5f;
+
 
 
             }

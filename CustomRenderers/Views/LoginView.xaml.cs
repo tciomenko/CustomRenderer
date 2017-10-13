@@ -31,6 +31,7 @@ namespace CustomRenderers.Views
         }
         public void SingInClicked(object sender, EventArgs e)
 		{
+           
             Navigation.PushModalAsync(new MainView());
         }
     }

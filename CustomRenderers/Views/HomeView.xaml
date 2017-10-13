@@ -7,12 +7,12 @@
   <ContentPage.Content>
         
 <!--        <ScrollView>-->
-        <StackLayout HorizontalOptions="FillAndExpand">
+        <StackLayout HorizontalOptions="FillAndExpand" >
             
         <!--<Label Text="Good Morning!" FontSize="35" TextColor="White" HorizontalOptions="Center"/>
         <Button Image="circle.png" Opacity="1" Margin="20" BackgroundColor="Transparent"/>-->
             
-            <ListView ItemsSource="{Binding HomeModelProp.ListCell}" RowHeight="86" BackgroundColor="White"  HasUnevenRows="true"
+            <ListView x:Name="listView" ItemsSource="{Binding HomeModelProp.ListCell}" RowHeight="86" BackgroundColor="White"  HasUnevenRows="true"
                 IsRefreshing="{Binding IsBusy}"  RefreshCommand="{Binding RefreshCommand}"
                 IsPullToRefreshEnabled="true" Header="" >
                 <ListView.HeaderTemplate>
@@ -23,14 +23,15 @@
                                 <RowDefinition Height="100"/>
                                 <RowDefinition Height="40"/>
                             </Grid.RowDefinitions>
-                            <local:ImageCircle x:Name="imageCircle" WidthRequest="200" HeightRequest="200" Aspect="AspectFill" 
-                            HorizontalOptions="Center" VerticalOptions="Center"  ImageName="images1.jpg" Grid.RowSpan="2" >
+                            <BoxView  BackgroundColor="Silver" Grid.Row="1" Grid.RowSpan="2"/>
+                            <local:ImageCircle  x:Name="imageCircle" WidthRequest="200" HeightRequest="200" Aspect="AspectFill" 
+                                                HorizontalOptions="Center" VerticalOptions="Center"  ImageName="images1.jpg" Grid.RowSpan="2" >
                             <local:ImageCircle.GestureRecognizers>
                                 <TapGestureRecognizer
                                 Tapped="OnTapGestureRecognizerTapped"   />
                                 </local:ImageCircle.GestureRecognizers>
                             </local:ImageCircle>
-                            <Label Text="Доброе утро!" FontSize="35" TextColor="Black" HorizontalOptions="Center" Grid.Row="2"/>
+                            <Label Text="Доброе утро!" FontSize="35" TextColor="Black"  HorizontalOptions="Center" VerticalOptions="Start" Grid.Row="2"/>
 
                          <!--<local:ButtonCircle BorderWidth="3" HorizontalOptions="Center"  VerticalOptions="Center"
                                 WidthRequest="200" HeightRequest="200" BorderRadius="100" BackgroundImage="images1.jpg" Clicked="ButtonCircle_Clicked"
@@ -73,6 +74,10 @@
                                 </StackLayout> 
                         </ViewCell>-->
                     </DataTemplate>
+                    <!--<DataTemplate>
+                    <ImageCell/>
+                    </DataTemplate>-->
+                    
                 </ListView.ItemTemplate>
             </ListView>
 

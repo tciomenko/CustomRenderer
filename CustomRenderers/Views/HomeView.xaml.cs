@@ -20,6 +20,8 @@ namespace CustomRenderers.Views
             
             homeViewModel = new HomeViewModel();
             homeViewModel.SetMasterPageItem();
+            DataTemplate dt = new DataTemplate();
+
             this.BindingContext = homeViewModel;
 
 		}

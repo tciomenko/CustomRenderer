@@ -3,7 +3,6 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:CustomRenderers.Views;assembly=CustomRenderers"
     x:Class="CustomRenderers.Views.UserImagePage" BackgroundColor="Black">
-
     <Grid>
        <Grid.RowDefinitions>
             <RowDefinition Height="25"/>
