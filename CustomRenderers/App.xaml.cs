@@ -8,7 +8,6 @@ namespace CustomRenderers
         public App()
         {
             InitializeComponent();
-
             MainPage =new StartView();
         }
 

@@ -3,10 +3,13 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="CustomRenderers.Views.FriendListView" 
     xmlns:local="clr-namespace:CustomRenderers.Views;assembly=CustomRenderers" 
-    BackgroundImage="kITvxi0Tf34.jpg" Padding="0">
+    BackgroundImage="kITvxi0Tf34.jpg" Padding="0"
+    xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             ios:Page.PrefersStatusBarHidden="True"
+             ios:Page.PreferredStatusBarUpdateAnimation="Fade">
 	<ContentView.Content>
-        <StackLayout Padding="0">
-            <ListView ItemsSource="{Binding FriendList}" RowHeight="75">
+        <StackLayout>
+            <ListView ItemsSource="{Binding FriendList}" RowHeight="90" >
                 <!--<ListView.HeaderTemplate>
                     <ListView.Header>
                         

@@ -14,16 +14,20 @@
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="80" />
         </Grid.ColumnDefinitions>-->
-    <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+    <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand">
+    <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="Start">
         <local:ImageCircle x:Name="ImageCircle"  HeightRequest="75" WidthRequest="75" HorizontalOptions="Center" VerticalOptions="Center" Aspect="AspectFill"  
-                    ImageName="{Binding ImageFileName}"/>
+              ImageName="images1.jpg"/>    <!-- ImageName="{Binding ImageFileName}"/>-->
         <StackLayout>
         <Label Text="{Binding Name}" FontSize="18" VerticalOptions="Center" />
         <Label Text="{Binding EventFriends}" FontSize="14" TextColor="Gray" VerticalOptions="Start" HorizontalOptions="Start"/>
         </StackLayout>
+        
         <StackLayout HorizontalOptions="FillAndExpand">
-        <Label Text="{Binding Time}" FontSize="12" TextColor="Gray" HorizontalOptions="EndAndExpand"  Margin="0,0,10,0" />
+        <Label Text="{Binding Time}" FontSize="12" TextColor="Gray" HorizontalOptions="Start"  Margin="0,0,10,0" />
         </StackLayout>
+    </StackLayout>
+<!--    <BoxView HeightRequest="8"  Color="Silver" VerticalOptions="Start"/>-->
     </StackLayout>
     <!--</Grid>-->
 
