@@ -27,80 +27,37 @@ namespace CustomRenderers.ViewModels
                 {
                     IsBusy = true;
                     //MasterPageItems.Clear();
-                    HomeModelProp.ListCell.Clear();
-                    SetMasterPageItem();
+                    //HomeModelProp.ListCell.Clear();
+                    //SetMasterPageItem();
                     IsBusy = false;
                 });
             }
         }
 
-
         public void SetMasterPageItem(){
-            
-            HomeModelProp.ListCell.Add(new MyCellModel
-            {
-                Name = "Bill Gates",
-                ImageFileName = "BillGates.jpg",
-                EventFriends = "Кронфиренция",
-                Time = "8-10pm",
-                TargetType = typeof(HomeView)
-            });
-            HomeModelProp.ListCell.Add(new MyCellModel
-            {
-                Name = "Юлия",
-                ImageFileName = "images1.jpg",
-                EventFriends = "Пробежка",
-                Time = "6-7pm",
-                TargetType = typeof(HomeView)
-            });
-            HomeModelProp.ListCell.Add(new MyCellModel
-            {
-                Name = "Bill Gates",
-                ImageFileName = "BillGates.jpg",
-                EventFriends = "Кронфиренция",
-                Time = "8-10pm",
-                TargetType = typeof(HomeView)
-            });
-            HomeModelProp.ListCell.Add(new MyCellModel
-            {
-                Name = "Юлия",
-                ImageFileName = "images1.jpg",
-                EventFriends = "Пробежка",
-                Time = "6-7pm",
-                TargetType = typeof(HomeView)
-            });
-            HomeModelProp.ListCell.Add(new MyCellModel
-            {
-                Name = "Bill Gates",
-                ImageFileName = "BillGates.jpg",
-                EventFriends = "Кронфиренция",
-                Time = "8-10pm",
-                TargetType = typeof(HomeView)
-            });
-            HomeModelProp.ListCell.Add(new MyCellModel
-            {
-                Name = "Юлия",
-                ImageFileName = "images1.jpg",
-                EventFriends = "Пробежка",
-                Time = "6-7pm",
-                TargetType = typeof(HomeView)
-            });
-            HomeModelProp.ListCell.Add(new MyCellModel
-            {
-                Name = "Bill Gates",
-                ImageFileName = "BillGates.jpg",
-                EventFriends = "Кронфиренция",
-                Time = "8-10pm",
-                TargetType = typeof(HomeView)
-            });
-            HomeModelProp.ListCell.Add(new MyCellModel
-            {
-                Name = "Юлия",
-                ImageFileName = "images1.jpg",
-                EventFriends = "Пробежка",
-                Time = "6-7pm",
-                TargetType = typeof(HomeView)
-            });
+
+            for (var i = 0; i < 10;i++){
+                if(i%2==0)
+                    HomeModelProp.ListCell.Add(new MyCellModel
+                    {
+                        Name = "Bill Gates",
+                        ImageFileName = "BillGates.jpg",
+                        EventFriends = "Кронфиренция",
+                        Time = "8-10pm",
+                        TargetType = typeof(HomeView)
+                    });
+                else{
+                    HomeModelProp.ListCell.Add(new MyCellModel
+                    {
+                        Name = "Юлия",
+                        ImageFileName = "images1.jpg",
+                        EventFriends = "Пробежка",
+                        Time = "6-7pm",
+                        TargetType = typeof(HomeView)
+                    });
+                }
+            }
+
             HomeModelProp.BackgroundImage = "images1.jpg";
             HomeModelProp.UserImage = "images1.jpg";
 

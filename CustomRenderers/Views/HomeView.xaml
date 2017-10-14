@@ -1,20 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    xmlns:selector="clr-namespace:CustomRenderers.Selectors;assembly=CustomRenderers"
     xmlns:local="clr-namespace:CustomRenderers.Views;assembly=CustomRenderers"
+    xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
     x:Class="CustomRenderers.Views.HomeView"
-    BackgroundImage="kITvxi0Tf34.jpg">
+    ios:Page.PrefersStatusBarHidden="True"
+    ios:Page.PreferredStatusBarUpdateAnimation="Fade"
+    BackgroundImage="kITvxi0Tf34.jpg" >
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <DataTemplate x:Key="eventHomeTemplate">
+                        <local:BirthdayCell/>
+            </DataTemplate>
+            <DataTemplate x:Key="birthdayHomeTemplate">
+                  <local:FriendCell Name="{Binding Name}" EventFriends="{Binding EventFriends}" Time="{Binding Time}"
+                        ImageFileName="{Binding ImageFileName}" />
+            </DataTemplate>
+            <selector:HomeTemplateSelector x:Key="homeTemplateSelector"
+                EventTemplate="{StaticResource eventHomeTemplate}"
+                BirthdayTemplate="{StaticResource birthdayHomeTemplate}" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
   <ContentPage.Content>
-        
-<!--        <ScrollView>-->
-        <StackLayout HorizontalOptions="FillAndExpand" >
+        <StackLayout HorizontalOptions="FillAndExpand">
+<!--            <AbsoluteLayout InputTransparent="false" HeightRequest="800" Margin="0,0,0,-820"   DisableLayout="true" ios:VisualElement.BlurEffect="Light"/>-->
             
-        <!--<Label Text="Good Morning!" FontSize="35" TextColor="White" HorizontalOptions="Center"/>
-        <Button Image="circle.png" Opacity="1" Margin="20" BackgroundColor="Transparent"/>-->
             
-            <ListView x:Name="listView" ItemsSource="{Binding HomeModelProp.ListCell}" RowHeight="86" BackgroundColor="White"  HasUnevenRows="true"
-                IsRefreshing="{Binding IsBusy}"  RefreshCommand="{Binding RefreshCommand}"
-                IsPullToRefreshEnabled="true" Header="" >
+            <ListView x:Name="listView" ItemsSource="{Binding HomeModelProp.ListCell}" RowHeight="86" Margin="10,0,10,0" BackgroundColor="Transparent"  HasUnevenRows="true"
+                IsRefreshing="{Binding IsBusy}" ItemTemplate="{StaticResource homeTemplateSelector}"  RefreshCommand="{Binding RefreshCommand}"
+                IsPullToRefreshEnabled="true" Header="">
                 <ListView.HeaderTemplate>
                     <DataTemplate>
                         <Grid BackgroundColor="Transparent">
@@ -23,7 +38,8 @@
                                 <RowDefinition Height="100"/>
                                 <RowDefinition Height="40"/>
                             </Grid.RowDefinitions>
-                            <BoxView  BackgroundColor="Silver" Grid.Row="1" Grid.RowSpan="2"/>
+                            
+                            <BoxView  BackgroundColor="Silver" Grid.Row="1" Grid.RowSpan="2" Opacity="0.9"/>
                             <local:ImageCircle  x:Name="imageCircle" WidthRequest="200" HeightRequest="200" Aspect="AspectFill" 
                                                 HorizontalOptions="Center" VerticalOptions="Center"  ImageName="images1.jpg" Grid.RowSpan="2" >
                             <local:ImageCircle.GestureRecognizers>
@@ -31,57 +47,12 @@
                                 Tapped="OnTapGestureRecognizerTapped"   />
                                 </local:ImageCircle.GestureRecognizers>
                             </local:ImageCircle>
-                            <Label Text="Доброе утро!" FontSize="35" TextColor="Black"  HorizontalOptions="Center" VerticalOptions="Start" Grid.Row="2"/>
-
-                         <!--<local:ButtonCircle BorderWidth="3" HorizontalOptions="Center"  VerticalOptions="Center"
-                                WidthRequest="200" HeightRequest="200" BorderRadius="100" BackgroundImage="images1.jpg" Clicked="ButtonCircle_Clicked"
-                            Opacity="1" BorderColor="White"   /> -->
-                        
-                            <!--<Image Source="circle.png"    Aspect="AspectFit"/>-->
+                            <Label Text="Ирина Циоменко"  FontSize="35" TextColor="Black"  HorizontalOptions="Center" VerticalOptions="Start" Grid.Row="2"/>
                         </Grid>
                     </DataTemplate>
             </ListView.HeaderTemplate>
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <local:FriendCell Name="{Binding Name}" EventFriends="{Binding EventFriends}" Time="{Binding Time}"
-                        ImageFileName="{Binding ImageFileName}" />
-                       <!--<local:MyCell Name="{Binding Name}" EventFriends="{Binding EventFriends}" Time="{Binding Time}"
-                        ImageFileName="{Binding ImageFileName}">
-                            
-                        <local:MyCell.ContextActions>
-                               
-                                <MenuItem Text="Add" Clicked="Add_Clicked"/>
-                                <MenuItem Text="Edit" Clicked="Edit_Clicked"/>
-                                <MenuItem Text="Delite" Clicked="Delite_Clicked"/>
-
-                            </local:MyCell.ContextActions>
-
-                        </local:MyCell>-->
-
-                      <!--<ViewCell >
-                            <StackLayout BackgroundColor="White" Orientation="Horizontal" Margin="0,5,0,5">
-                               <Image Source="{Binding ImageFilename}"  WidthRequest="80" HeightRequest="80"/>
-                                <StackLayout Orientation="Vertical">
-                                    <StackLayout Orientation="Horizontal" BackgroundColor="White">
-                                    <Label Text="{Binding EventFriends}" TextColor="Black" />
-                                    <Label Text="{Binding Name}" TextColor="Black" />
-                                    </StackLayout >
-                                    <StackLayout Orientation="Horizontal">
-                                    <Label Text="{Binding Time}" TextColor="Gray"/>
-                                     <Label Text="{Binding Time}" TextColor="Gray"/>
-                                    </StackLayout>
-                                    </StackLayout>
-                                </StackLayout> 
-                        </ViewCell>-->
-                    </DataTemplate>
-                    <!--<DataTemplate>
-                    <ImageCell/>
-                    </DataTemplate>-->
-                    
-                </ListView.ItemTemplate>
             </ListView>
-
+               
         </StackLayout>
-<!--        </ScrollView>-->
  </ContentPage.Content>
 </ContentPage>

@@ -15,6 +15,7 @@ namespace CustomRenderers.Views
             InitializeComponent();
             settingsViewModel = new SettingsViewModel();
             this.BindingContext = settingsViewModel;
+            
         }
 
     }

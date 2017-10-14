@@ -54,6 +54,12 @@
     <EmbeddedResource Include="Views\FriendCell.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\BirthdayCell.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FriendListView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.xaml.cs">
@@ -100,6 +106,15 @@
       <DependentUpon>FriendCell.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\UserImagePage.xaml.cs" />
+    <Compile Include="Views\BirthdayCell.xaml.cs">
+      <DependentUpon>BirthdayCell.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Selectors\HomeTemplateSelector.cs" />
+    <Compile Include="Views\FriendListView.xaml.cs">
+      <DependentUpon>FriendListView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\FriendListViewModel.cs" />
+    <Compile Include="Models\FriendListModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="XamForms.Controls.Calendar">
@@ -128,6 +143,7 @@
     <Folder Include="Views\" />
     <Folder Include="ViewModels\" />
     <Folder Include="Data\" />
+    <Folder Include="Selectors\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Forms.2.4.0.282\build\portable-win+net45+wp80+win81+wpa81\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.4.0.282\build\portable-win+net45+wp80+win81+wpa81\Xamarin.Forms.targets')" />

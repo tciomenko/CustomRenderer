@@ -26,6 +26,12 @@ namespace CustomRenderers.Views
 				IconSource = "Home.png",
                 TargetType = typeof(HomeView)
 			});
+            masterPageItems.Add(new NavigationPageItem
+            {
+                Title = "Friend",
+                IconSource = "Logout.png",
+                TargetType = typeof(FriendListView)
+            });
 			masterPageItems.Add(new NavigationPageItem
 			{
 				Title = "Settings",

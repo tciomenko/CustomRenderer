@@ -15,12 +15,12 @@ namespace CustomRenderers.Views
 
             navigationView = new NavigationView();
             var navPage=new NavigationPage((Page)Activator.CreateInstance(typeof(HomeView)));
-            navPage.BarBackgroundColor = Color.Blue;
+            navPage.BarBackgroundColor = Color.FromRgb(180,180,180);
             Detail = navPage;
             IsPresented = false;
             Master = navigationView;
-            NavigationView.ListView.ItemSelected+= OnItemSelected;
-            NavigationView.TappedOrClickEvent += Presented;
+            navigationView.ListView.ItemSelected+= OnItemSelected;
+            navigationView.TappedOrClickEvent += Presented;
         }
 
 
@@ -34,7 +34,7 @@ namespace CustomRenderers.Views
 			{
                 
 				Detail = new NavigationPage((Page)Activator.CreateInstance(item.TargetType));
-				NavigationView.ListView.SelectedItem = null;
+                navigationView.ListView.SelectedItem = null;
 				IsPresented = false;
 			}
         }

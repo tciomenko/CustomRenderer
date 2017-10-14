@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="CustomRenderers.Views.FriendListView" 
+    xmlns:local="clr-namespace:CustomRenderers.Views;assembly=CustomRenderers" 
+    BackgroundImage="kITvxi0Tf34.jpg" Padding="0">
+	<ContentView.Content>
+        <StackLayout Padding="0">
+            <ListView ItemsSource="{Binding FriendList}" RowHeight="75">
+                <!--<ListView.HeaderTemplate>
+                    <ListView.Header>
+                        
+                    </ListView.Header>
+                </ListView.HeaderTemplate>-->
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <local:FriendCell Name="{Binding Name}" EventFriends="{Binding EventFriends}" Time="{Binding Time}"
+                        ImageFileName="{Binding ImageFileName}"/>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+	</ContentView.Content>
+</ContentPage>

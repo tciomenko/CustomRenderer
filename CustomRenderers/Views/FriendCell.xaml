@@ -2,8 +2,8 @@
 <ViewCell  xmlns="http://xamarin.com/schemas/2014/forms"
             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
             xmlns:local="clr-namespace:CustomRenderers.Views;assembly=CustomRenderers"
-            x:Class="CustomRenderers.Views.FriendCell">
-    <Grid>
+            x:Class="CustomRenderers.Views.FriendCell" >
+    <!--<Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="25"/>
             <RowDefinition Height="25"/>
@@ -13,14 +13,18 @@
             <ColumnDefinition Width="85" />
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="80" />
-        </Grid.ColumnDefinitions>
-        <local:ImageCircle x:Name="ImageCircle"  HeightRequest="80" WidthRequest="80" HorizontalOptions="End" Aspect="AspectFill"  
-                    ImageName="{Binding ImageFileName}" Grid.RowSpan="3" VerticalOptions="Center"/>
-        <Label Text="{Binding Name}" Grid.Column="1" FontSize="18" VerticalOptions="End" />
-        <Label Text="{Binding Time}" Grid.Row="0" Grid.Column="2" FontSize="12" TextColor="Gray"
-                    VerticalOptions="End" HorizontalOptions="End"  Margin="0,0,0,5" />
-        <Label Text="{Binding EventFriends}" Grid.Row="1" Grid.Column="1" FontSize="14"
-                    TextColor="Gray" VerticalOptions="Start" HorizontalOptions="Start"/>
-    </Grid>
+        </Grid.ColumnDefinitions>-->
+    <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+        <local:ImageCircle x:Name="ImageCircle"  HeightRequest="75" WidthRequest="75" HorizontalOptions="Center" VerticalOptions="Center" Aspect="AspectFill"  
+                    ImageName="{Binding ImageFileName}"/>
+        <StackLayout>
+        <Label Text="{Binding Name}" FontSize="18" VerticalOptions="Center" />
+        <Label Text="{Binding EventFriends}" FontSize="14" TextColor="Gray" VerticalOptions="Start" HorizontalOptions="Start"/>
+        </StackLayout>
+        <StackLayout HorizontalOptions="FillAndExpand">
+        <Label Text="{Binding Time}" FontSize="12" TextColor="Gray" HorizontalOptions="EndAndExpand"  Margin="0,0,10,0" />
+        </StackLayout>
+    </StackLayout>
+    <!--</Grid>-->
 
 </ViewCell>
