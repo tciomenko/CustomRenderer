@@ -5,13 +5,11 @@
     xmlns:local="clr-namespace:CustomRenderers.Views;assembly=CustomRenderers"
     xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
     x:Class="CustomRenderers.Views.HomeView"
-    ios:Page.PrefersStatusBarHidden="True"
-    ios:Page.PreferredStatusBarUpdateAnimation="Fade"
     BackgroundImage="kITvxi0Tf34.jpg" >
     <ContentPage.Resources>
         <ResourceDictionary>
             <DataTemplate x:Key="eventHomeTemplate">
-                        <local:BirthdayCell/>
+                        <local:BirthdayCell />
             </DataTemplate>
             <DataTemplate x:Key="birthdayHomeTemplate">
                   <local:FriendCell Name="{Binding Name}" EventFriends="{Binding EventFriends}" Time="{Binding Time}"
@@ -27,9 +25,12 @@
 <!--            <AbsoluteLayout InputTransparent="false" HeightRequest="800" Margin="0,0,0,-820"   DisableLayout="true" ios:VisualElement.BlurEffect="Light"/>-->
             
             
-            <ListView x:Name="listView" ItemsSource="{Binding HomeModelProp.ListCell}" RowHeight="86" Margin="10,0,10,0" BackgroundColor="Transparent"  HasUnevenRows="true"
-                IsRefreshing="{Binding IsBusy}" ItemTemplate="{StaticResource homeTemplateSelector}"  RefreshCommand="{Binding RefreshCommand}"
-                IsPullToRefreshEnabled="true" Header="">
+            <ListView x:Name="listView" ItemsSource="{Binding HomeModelProp.ListCell}" RowHeight="85" Margin="10,0,10,0"
+                BackgroundColor="Transparent" 
+                HasUnevenRows="true" IsRefreshing="{Binding IsBusy}"
+                ItemTemplate="{StaticResource homeTemplateSelector}"
+                RefreshCommand="{Binding RefreshCommand}"
+                IsPullToRefreshEnabled="true" Header="" >
                 <ListView.HeaderTemplate>
                     <DataTemplate>
                         <Grid BackgroundColor="Transparent">
@@ -47,7 +48,8 @@
                                 Tapped="OnTapGestureRecognizerTapped"   />
                                 </local:ImageCircle.GestureRecognizers>
                             </local:ImageCircle>
-                            <Label Text="Ирина Циоменко"  FontSize="35" TextColor="Black"  HorizontalOptions="Center" VerticalOptions="Start" Grid.Row="2"/>
+                            <Label Text="Ирина Циоменко"  FontSize="35" TextColor="Black"  
+                            HorizontalOptions="Center" VerticalOptions="Start" Grid.Row="2"/>
                         </Grid>
                     </DataTemplate>
             </ListView.HeaderTemplate>

@@ -18,7 +18,6 @@ namespace CustomRenderers.ViewModels
         public HomeViewModel(){
             //SetMasterPageItem();
         }
-       
         public ICommand RefreshCommand
         {
             get
@@ -33,7 +32,6 @@ namespace CustomRenderers.ViewModels
                 });
             }
         }
-
         public void SetMasterPageItem(){
 
             for (var i = 0; i < 10;i++){
@@ -51,7 +49,7 @@ namespace CustomRenderers.ViewModels
                     {
                         Name = "Юлия",
                         ImageFileName = "images1.jpg",
-                        EventFriends = "Пробежка",
+                        EventFriends = "Пробежка111111111",
                         Time = "6-7pm",
                         TargetType = typeof(HomeView)
                     });
@@ -90,20 +88,6 @@ namespace CustomRenderers.ViewModels
             }
         }
 
-
-        //public List<MyCellModel> MasterPageItems
-        //{
-        //    get
-        //    {
-        //        return masterPageItems;
-        //    }
-        //    set
-        //    {
-        //        masterPageItems = value;
-        //        OnPropertyChanged(nameof(MasterPageItems));
-
-        //    }
-        //}
 
         public bool IsBusy
         {

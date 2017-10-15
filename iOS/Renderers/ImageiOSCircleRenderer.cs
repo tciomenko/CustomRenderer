@@ -6,17 +6,18 @@ using CustomRenderers.Views;
 using CustomRenderers.iOS.Renderers;
 using System;
 using CoreGraphics;
+using CoreAnimation;
 
-[assembly: ExportRenderer(typeof(ImageCircle), typeof(ImageiOSCircleRenderer))]
+[assembly: ExportRenderer(typeof(CustomRenderers.Views.ImageCircle), typeof(ImageiOSCircleRenderer))]
 namespace CustomRenderers.iOS.Renderers
 {
     public class ImageiOSCircleRenderer:ImageRenderer
     {
-        public ImageCircle image;
+        public CustomRenderers.Views.ImageCircle image;
         double min;
         public ImageiOSCircleRenderer()
         {
-            image = new ImageCircle();
+            image = new CustomRenderers.Views.ImageCircle();
         }
         protected override void OnElementChanged(ElementChangedEventArgs<Image> e)
         {
@@ -24,7 +25,7 @@ namespace CustomRenderers.iOS.Renderers
             if (Control == null || e.OldElement != null || Element == null )
                 return;
             
-            image = (ImageCircle)this.Element;
+            image = (CustomRenderers.Views.ImageCircle)this.Element;
             if (Control != null)
             {
                 if (image.CornerRadius != "0"&& image.CornerRadius != "")
@@ -35,17 +36,12 @@ namespace CustomRenderers.iOS.Renderers
                 {
                     min = Math.Min(Element.WidthRequest, Element.HeightRequest);
                     Control.Layer.CornerRadius = (float)(min / 2.0);
+
                 }
 
                 Control.Image = UIImage.FromFile(image.ImageName);
                 Control.Layer.MasksToBounds = false;
                 Control.ClipsToBounds = true;
-                //Control.Layer.ShadowRadius = 30f;
-                //Control.Layer.ShadowColor =new CGColor(255,0,255);
-                //Control.Layer.ShadowOpacity = 0.5f;
-
-
-
             }
 
         }
@@ -72,6 +68,16 @@ namespace CustomRenderers.iOS.Renderers
                     DrawOther();
                 }
             }
+        }
+        public override void Draw(CGRect rect)
+        {
+            base.Draw(rect);
+            Layer.ShadowRadius = 4.0f;
+            Layer.ShadowColor = UIColor.Blue.CGColor;
+            Layer.ShadowOffset = new CGSize(0, 0);
+            Layer.ShadowOpacity = 1.0f;
+            Layer.ShadowPath = UIBezierPath.FromRoundedRect(rect,(float)(min / 2.0)).CGPath;
+            Layer.MasksToBounds = false;
         }
         public override void TouchesBegan(Foundation.NSSet touches, UIEvent evt)
         {

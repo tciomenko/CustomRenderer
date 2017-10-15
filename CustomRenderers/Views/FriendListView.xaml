@@ -9,7 +9,7 @@
              ios:Page.PreferredStatusBarUpdateAnimation="Fade">
 	<ContentView.Content>
         <StackLayout>
-            <ListView ItemsSource="{Binding FriendList}" RowHeight="90" >
+            <ListView ItemsSource="{Binding FriendList}" RowHeight="85" >
                 <!--<ListView.HeaderTemplate>
                     <ListView.Header>
                         
@@ -17,8 +17,9 @@
                 </ListView.HeaderTemplate>-->
                 <ListView.ItemTemplate>
                     <DataTemplate>
+                        <!--<local:BirthdayCell/>-->
                         <local:FriendCell Name="{Binding Name}" EventFriends="{Binding EventFriends}" Time="{Binding Time}"
-                        ImageFileName="{Binding ImageFileName}"/>
+                        ImageFileName="{Binding ImageFileName}" />
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>

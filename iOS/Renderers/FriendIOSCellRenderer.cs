@@ -21,7 +21,7 @@ namespace CustomRenderers.iOS.Renderers
             {
                 
                 nativeCell = new FriendNativeCell((Foundation.NSString)item.GetType().FullName, friendCell);
-                //nativeCell.ImageView.Image = UIImage.FromFile("images1.jpg");
+
             }
             else
             {

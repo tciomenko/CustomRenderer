@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using XamForms.Controls;
 using CustomRenderers.Models;
 using CustomRenderers.ViewModels;
 using Xamarin.Forms;
@@ -29,7 +28,8 @@ namespace CustomRenderers.Views
         {
             var nav = new NavigationPage(new UserImagePage(homeViewModel.UserImage));
             var toolbar = new ToolbarItem("Close", "Close.png", () => { Navigation.PopModalAsync(); }, ToolbarItemOrder.Default);
-            nav.HeightRequest = 100;
+            nav.HeightRequest = 300;
+            nav.WidthRequest = 300;
             nav.ToolbarItems.Add(toolbar);
 
             Navigation.PushModalAsync(nav);
