@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-
 using Foundation;
 using UIKit;
 
@@ -13,8 +12,9 @@ namespace CustomRenderers.iOS
         static void Main(string[] args)
         {
             // if you want to use a different Application Delegate class from "AppDelegate"
-            // you can specify it here.
+            // you can specify it here.Возникло исключение System.TypeLoadExceptio
             UIApplication.Main(args, null, "AppDelegate");
+
         }
     }
 }

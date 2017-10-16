@@ -47,10 +47,11 @@
                   <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
 
-            <ff:CachedImage Source="images1.jpg"  >
+            <ff:CachedImage Source="images1.jpg" HeightRequest="100" WidthRequest="100">
                 <ff:CachedImage.Transformations>
-                    <ffTransformations:RoundedTransformation Radius="240" BorderSize="5" BorderHexColor="Green"/>
+                    <ffTransformations:RoundedTransformation Radius="170" BorderHexColor="#3bc612" BorderSize="20"/>
                 </ff:CachedImage.Transformations>
+                                
             </ff:CachedImage>
                 <Label Grid.Column="1"
                        Text="{Binding Name}"
@@ -59,6 +60,7 @@
                        Grid.Row="1"
                        VerticalOptions="Start"
                        Text="{Binding Location}"/>
+                            
               </Grid>
             </ViewCell>
           </DataTemplate>

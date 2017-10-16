@@ -1,5 +1,6 @@
 ﻿using Xamarin.Forms;
 using CustomRenderers.Views;
+using FFImageLoading.Transformations;
 
 namespace CustomRenderers
 {

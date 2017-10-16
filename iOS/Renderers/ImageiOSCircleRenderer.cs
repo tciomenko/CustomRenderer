@@ -8,12 +8,12 @@ using System;
 using CoreGraphics;
 using CoreAnimation;
 
-[assembly: ExportRenderer(typeof(CustomRenderers.Views.ImageCircle), typeof(ImageiOSCircleRenderer))]
+[assembly: ExportRenderer(typeof(ImageCircle), typeof(ImageiOSCircleRenderer))]
 namespace CustomRenderers.iOS.Renderers
 {
     public class ImageiOSCircleRenderer:ImageRenderer
     {
-        public CustomRenderers.Views.ImageCircle image;
+        public ImageCircle image;
         double min;
         public ImageiOSCircleRenderer()
         {
