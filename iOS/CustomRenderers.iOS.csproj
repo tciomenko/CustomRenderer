@@ -144,6 +144,12 @@
     <Reference Include="Plugin.MediaManager">
       <HintPath>..\packages\Plugin.MediaManager.0.4.5\lib\Xamarin.iOS10\Plugin.MediaManager.dll</HintPath>
     </Reference>
+    <Reference Include="Plugin.MediaManager.Forms">
+      <HintPath>..\packages\Plugin.MediaManager.Forms.0.4.5\lib\xamarinios\Plugin.MediaManager.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.MediaManager.Forms.iOS">
+      <HintPath>..\packages\Plugin.MediaManager.Forms.0.4.5\lib\xamarinios\Plugin.MediaManager.Forms.iOS.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CustomRenderers\CustomRenderers.csproj">

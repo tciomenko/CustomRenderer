@@ -26,6 +26,7 @@ namespace CustomRenderers.iOS.Renderers
 
             }
             cell.UpdateCell(myCell);
+
             return cell;
         }
         

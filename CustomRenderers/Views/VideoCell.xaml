@@ -1,4 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ViewCell xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="CustomRenderers.Views.VideoCell">
-    
+<ViewCell xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:forms="clr-namespace:Plugin.MediaManager.Forms;assembly=Plugin.MediaManager.Forms"
+    x:Class="CustomRenderers.Views.VideoCell">
+
+    <StackLayout HeightRequest="250">
+        <Label Text="VideoName" FontSize="25"/>
+        <forms:VideoView HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
+                     Source="{Binding Name}" AspectMode="AspectFill" />
+    </StackLayout>
 </ViewCell>

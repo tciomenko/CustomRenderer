@@ -1,15 +1,19 @@
 ﻿using Xamarin.Forms;
 using CustomRenderers.Views;
-using FFImageLoading.Transformations;
+
+using Plugin.MediaManager.Forms;
 
 namespace CustomRenderers
 {
     public partial class App : Application
     {
+        
         public App()
         {
+            var workaround = typeof(Plugin.MediaManager.Forms.VideoView);
+
             InitializeComponent();
-            MainPage =new StartView();
+            MainPage =new CustomRenderers.Views.StartView();
         }
 
         protected override void OnStart()
