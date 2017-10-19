@@ -7,11 +7,11 @@ using Xamarin.Forms;
 
 namespace CustomRenderers.Views
 {
-    public partial class VideoView : ContentPage
+    public partial class VideoListView : ContentPage
     {
         private IPlaybackController PlaybackController => CrossMediaManager.Current.PlaybackController;
         public VideoListViewModel videoListViewModel=new VideoListViewModel();
-        public VideoView()
+        public VideoListView()
         {
             InitializeComponent();
             this.BindingContext = videoListViewModel;

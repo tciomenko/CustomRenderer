@@ -183,6 +183,8 @@
     <Compile Include="Native\FriendNativeCell.cs" />
     <Compile Include="Helpers\FormsViewToNativeiOS.cs" />
     <Compile Include="Renderers\FriendIOSCellRenderer.cs" />
+    <Compile Include="Renderers\VideoPlayerRenderer.cs" />
+    <Compile Include="Renderers\ViewiOSPlayer.cs" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\image.jpg" />

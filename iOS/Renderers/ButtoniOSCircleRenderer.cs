@@ -1,6 +1,7 @@
 ﻿using System;
 using CustomRenderers.iOS.Renderers;
 using CustomRenderers.Views;
+
 using UIKit;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.iOS;
@@ -14,12 +15,6 @@ namespace CustomRenderers.iOS.Renderers
 
         public ButtoniOSCircleRenderer(){
             buttonCircle = new ButtonCircle();
-
-        }
-        public override void Draw(CoreGraphics.CGRect rect)
-        {
-            base.Draw(rect);
-
 
         }
          

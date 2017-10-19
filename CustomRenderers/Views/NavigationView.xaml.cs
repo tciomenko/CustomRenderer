@@ -37,7 +37,7 @@ namespace CustomRenderers.Views
             {
                 Title = "Video",
                 IconSource = "Logout.png",
-                TargetType = typeof(VideoView)
+                TargetType = typeof(VideoListView)
             });
             masterPageItems.Add(new NavigationPageItem
             {

@@ -21,9 +21,11 @@
         </ResourceDictionary>
     </ContentPage.Resources>
   <ContentPage.Content>
-        <StackLayout HorizontalOptions="FillAndExpand">
-<!--            <AbsoluteLayout InputTransparent="false" HeightRequest="800" Margin="0,0,0,-820"   DisableLayout="true" ios:VisualElement.BlurEffect="Light"/>-->
-            
+       <Grid>
+        <!--<StackLayout HorizontalOptions="FillAndExpand">-->
+<!--            <AbsoluteLayout InputTransparent="false" HeightRequest="800" Margin="0,0,0,-820"   DisableLayout="true" />-->
+            <!--<Image  ios:VisualElement.BlurEffect="Light" IsEnabled="false"  InputTransparent="true" DisableLayout="true"
+            IsOpaque="true" />-->
             
             <ListView x:Name="listView" ItemsSource="{Binding HomeModelProp.ListCell}" RowHeight="85" Margin="10,0,10,0"
                 BackgroundColor="Transparent" 
@@ -55,6 +57,7 @@
             </ListView.HeaderTemplate>
             </ListView>
                
-        </StackLayout>
+        <!--</StackLayout>-->
+            </Grid>
  </ContentPage.Content>
 </ContentPage>

@@ -69,7 +69,7 @@
     <EmbeddedResource Include="Views\VideoCell.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\VideoView.xaml">
+    <EmbeddedResource Include="Views\VideoListView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
@@ -139,11 +139,13 @@
     <Compile Include="Views\VideoCell.xaml.cs">
       <DependentUpon>VideoCell.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\VideoView.xaml.cs">
-      <DependentUpon>VideoView.xaml</DependentUpon>
+    <Compile Include="Views\VideoListView.xaml.cs">
+      <DependentUpon>VideoListView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Models\VideoCellModel.cs" />
     <Compile Include="ViewModels\VideoListViewModel.cs" />
+    <Compile Include="Controls\VideoPlayer.cs" />
+    <Compile Include="Behaviors\VideoMenuBehavior.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="FFImageLoading">
@@ -198,6 +200,8 @@
     <Folder Include="Data\" />
     <Folder Include="Selectors\" />
     <Folder Include="Helpers\" />
+    <Folder Include="Controls\" />
+    <Folder Include="Behaviors\" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Images\images1.jpg" />
