@@ -191,6 +191,7 @@
   <ItemGroup>
     <None Include="packages.config" />
     <None Include="Images\1486395886-checkmark_80611.png" />
+    <None Include="Resourses\bmw.mp4" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Images\" />
@@ -202,6 +203,7 @@
     <Folder Include="Helpers\" />
     <Folder Include="Controls\" />
     <Folder Include="Behaviors\" />
+    <Folder Include="Resourses\" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Images\images1.jpg" />

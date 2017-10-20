@@ -1,10 +1,14 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
 using System.Drawing;
 using AVFoundation;
+using AVKit;
 using CoreGraphics;
 using CustomRenderers.Controls;
 using CustomRenderers.iOS.Renderers;
 using Foundation;
+using MediaPlayer;
 using UIKit;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.iOS;
@@ -13,53 +17,159 @@ using Xamarin.Forms.Platform.iOS;
 [assembly: ExportRenderer(typeof(VideoPlayer), typeof(VideoPlayerRenderer))]
 namespace CustomRenderers.iOS.Renderers
 {
-    public class VideoPlayerRenderer:ViewRenderer
+    public class VideoPlayerRenderer:ViewRenderer<VideoPlayer, UIView>
     {
+        private MPMoviePlayerViewController _player;
+        private List<NSObject> _observers = new List<NSObject>();
+        private UIButton _supposedFullscreenButton;
 
-        //globally declare variables
-        AVAsset _asset;
-        AVPlayerItem _playerItem;
-        AVPlayer _player;
 
-        AVPlayerLayer _playerLayer;
-        UIButton playButton;
-
-        protected override void OnElementChanged(ElementChangedEventArgs<View> e)
+        protected override void OnElementChanged(ElementChangedEventArgs<VideoPlayer> e)
         {
             base.OnElementChanged(e);
 
-            //Get the video
-            //bubble up to the AVPlayerLayer
-            var url = new NSUrl("http://www.androidbegin.com/tutorial/AndroidCommercial.3gp");
-            _asset = AVAsset.FromUrl(url);
+            if (e.NewElement != null)
+            {
+                if (base.Control == null)
+                {
+                    _player = new MPMoviePlayerViewController();
+                    _player.MoviePlayer.ShouldAutoplay = true;
+                    _player.MoviePlayer.ScalingMode = MPMovieScalingMode.AspectFit;
+                    _player.MoviePlayer.PrepareToPlay();
 
-            _playerItem = new AVPlayerItem(_asset);
+                    //_player.View.AddGestureRecognizer(new UITapGestureRecognizer(() => Element.FirePlayerTapped(this)));
+                    base.SetNativeControl(_player.View);
 
-            _player = new AVPlayer(_playerItem);
+                    //Add to root view controller as child
+                    var rootVC = UIApplication.SharedApplication?.KeyWindow?.RootViewController;
+                    if (rootVC == null)
+                        return;
+                    rootVC.AddChildViewController(_player);
+                    _player.DidMoveToParentViewController(rootVC);
 
-            _playerLayer = AVPlayerLayer.FromPlayer(_player);
+                    //Subscribe to necessary notifications
+                    var center = NSNotificationCenter.DefaultCenter;
+                    _observers.Add(center.AddObserver(MPMoviePlayerController.PlaybackStateDidChangeNotification, playbackStateChanged));
+                    _observers.Add(center.AddObserver(MPMoviePlayerController.PlaybackDidFinishNotification, playbackFinished));
+                }
+                e.NewElement.TogglePlay = togglePlay;
+                e.NewElement.Play = () => _player.MoviePlayer.Play();
+                e.NewElement.Stop = () => _player.MoviePlayer.Stop();
+                e.NewElement.HideFullScreenButton = hideFullScreenButton;
+            }
+            if (Element == null)
+                return;
 
-            //Create the play button
-            playButton = new UIButton();
-            playButton.SetTitle("Play Video", UIControlState.Normal);
-            playButton.BackgroundColor = UIColor.Gray;
-
-            //Set the trigger on the play button to play the video
-            playButton.TouchUpInside += (object sender, EventArgs arg) => {
-                _player.Play();
-            };
+            updateVideoPath();
+            updateControls();
         }
-        public override void LayoutSubviews()
+
+        protected override void OnElementPropertyChanged(object sender, PropertyChangedEventArgs e)
         {
-            base.LayoutSubviews();
-
-            //layout the elements depending on what screen orientation we are. 
-
-                playButton.Frame = new CGRect(0, NativeView.Frame.Bottom - 50, NativeView.Frame.Width, 50);
-                _playerLayer.Frame = NativeView.Frame;
-                NativeView.Layer.AddSublayer(_playerLayer);
-                NativeView.Add(playButton);
-           
+            base.OnElementPropertyChanged(sender, e);
+            if (e.PropertyName == VideoPlayer.VideoPathProperty.PropertyName)
+            {
+                updateVideoPath();
+            }
+            else if (e.PropertyName == VideoPlayer.ShowControlsProperty.PropertyName)
+            {
+                updateControls();
+            }
         }
+
+        protected override void Dispose(bool disposing)
+        {
+            base.Dispose(disposing);
+            if (disposing)
+            {
+                NSNotificationCenter.DefaultCenter.RemoveObservers(_observers);
+                if (_player != null)
+                {
+                    _player.Dispose();
+                    _player = null;
+                }
+            }
+        }
+
+
+
+        private void playbackStateChanged(NSNotification notification)
+        {
+            if (_player.MoviePlayer.PlaybackState == MPMoviePlaybackState.Playing)
+            {
+                Element.FirePlaybackStateChanged(this, true);
+            }
+            else
+            {
+                Element.FirePlaybackStateChanged(this, false);
+            }
+        }
+
+        private void playbackFinished(NSNotification notification)
+        {
+
+            var finishReason = (NSNumber)(notification.UserInfo[MPMoviePlayerController.PlaybackDidFinishReasonUserInfoKey]);
+            if (finishReason.Int32Value == (int)MPMovieFinishReason.PlaybackEnded &&
+                _player.MoviePlayer.Duration == _player.MoviePlayer.CurrentPlaybackTime)
+            {
+                Element.FirePlaybackFinished(this, new EventArgs());
+            }
+        }
+
+        private void updateVideoPath()
+        {
+            if (_player != null && Element != null)
+            {
+                _player.MoviePlayer.ContentUrl = !string.IsNullOrWhiteSpace(Element.VideoPath) ? NSUrl.FromFilename(Element.VideoPath) : null;
+            }
+        }
+
+        private void updateControls()
+        {
+            if (_player != null && Element != null)
+            {
+                _player.MoviePlayer.ControlStyle = Element.ShowControls
+                    ? MPMovieControlStyle.Embedded
+                    : MPMovieControlStyle.None;
+            }
+        }
+
+
+        private void togglePlay()
+        {
+            if (_player == null)
+                return;
+            if (_player.MoviePlayer.PlaybackState == MPMoviePlaybackState.Playing)
+                _player.MoviePlayer.Pause();
+            else
+                _player.MoviePlayer.Play();
+        }
+
+        private void hideFullScreenButton()
+        {
+            findFullScreenButton(_player.MoviePlayer.View);
+            if (_supposedFullscreenButton != null)
+                _supposedFullscreenButton.Hidden = true;
+        }
+
+        private CGPoint _maxPoint = new CGPoint(0, 0);
+        private void findFullScreenButton(UIView parent)
+        {
+            foreach (var subview in parent.Subviews)
+            {
+                if (subview is UIButton)
+                {
+                    if (subview.Frame.X > _maxPoint.X || subview.Frame.Y > _maxPoint.Y)
+                    {
+                        _supposedFullscreenButton = (UIButton)subview;
+                        _maxPoint = subview.Frame.Location;
+                    }
+                }
+                findFullScreenButton(subview);
+            }
+        }
+
+      
+
     }
 }

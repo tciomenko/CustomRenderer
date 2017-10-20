@@ -4,40 +4,50 @@ namespace CustomRenderers.Controls
 {
     public class VideoPlayer:View
     {
-        //public static readonly BindableProperty VideoNameProperty =
-        //    BindableProperty.Create("VideoName", typeof(string), typeof(VideoPlayer), "");
 
-        //public string VideoName
-        //{
-        //    get { return (string)GetValue(VideoNameProperty); }
-        //    set { SetValue(VideoNameProperty, value); }
-        //}
 
-        //public static readonly BindableProperty TimeProperty =
-        //    BindableProperty.Create("Time", typeof(string), typeof(VideoPlayer), "");
+        public Action TogglePlay { get; set; }
+        public Action Stop { get; set; }
+        public Action Play { get; set; }
+        public Action HideFullScreenButton { get; set; }
 
-        //public string Time
-        //{
-        //    get { return (string)GetValue(TimeProperty); }
-        //    set { SetValue(TimeProperty, value); }
-        //}
+        public event EventHandler<bool> PlaybackStateChanged;
+        public event EventHandler PlaybackFinished;
 
-        //public static readonly BindableProperty ImageNameProperty =
-        //    BindableProperty.Create("ImageName", typeof(string), typeof(VideoPlayer), "");
 
-        //public string ImageName
-        //{
-        //    get { return (string)GetValue(ImageNameProperty); }
-        //    set { SetValue(ImageNameProperty, value); }
-        //}
 
-        //public static readonly BindableProperty VolumeProperty =
-        //    BindableProperty.Create("Volume", typeof(string), typeof(VideoPlayer), "");
+        public static BindableProperty VideoPathProperty = BindableProperty.Create<VideoPlayer, string>(o => o.VideoPath, "");
 
-        //public string Volume
-        //{
-        //    get { return (string)GetValue(VolumeProperty); }
-        //    set { SetValue(VolumeProperty, value); }
-        //}
+        public string VideoPath
+        {
+            get { return (string)GetValue(VideoPathProperty); }
+            set { SetValue(VideoPathProperty, value); }
+        }
+
+
+
+        public static BindableProperty ShowControlsProperty = BindableProperty.Create<VideoPlayer, bool>(o => o.ShowControls, true);
+
+        public bool ShowControls
+        {
+            get { return (bool)GetValue(ShowControlsProperty); }
+            set { SetValue(ShowControlsProperty, value); }
+        }
+
+
+
+        public void FirePlaybackStateChanged(object sender, bool isPlaying)
+        {
+            PlaybackStateChanged?.Invoke(sender, isPlaying);
+        }
+
+
+        public void FirePlaybackFinished(object sender, EventArgs args)
+        {
+            PlaybackFinished?.Invoke(sender, args);
+        }
+
+
+
     }
 }
